@@ -1,0 +1,350 @@
+@media only screen and (max-width:1776px){
+    .displaycontainer{
+        padding-top: 20px; 
+    }
+}
+@media only screen and (max-width:1365px){
+    .displaycontainer{
+        padding-top: 50px; 
+    }
+    .tabs{
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+}
+@media only screen and (max-width:1201px){
+    .tabs{
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+}
+@media only screen and (max-width:991px){
+    .displaycontainer{
+        padding-top: 80px;
+    }
+    .tabs{
+        padding-left: 15% !important;
+        padding-right: 15% !important;
+    }
+}
+@media only screen and (max-width:853px){
+    .displaycontainer{
+        padding-top: 80px;
+    }
+    .tabs{
+        padding-left: 15% !important;
+        padding-right: 15% !important;
+    }
+}
+@media only screen and (max-width:769px){
+    .displaycontainer{
+        padding-top: 80px;
+    }
+    .tabs{
+        padding-left: 15% !important;
+        padding-right: 15% !important;
+    }
+}
+@media only screen and (max-width:768px){
+    .displaycontainer{
+        padding-top: 60px;
+    }
+    .tabs{
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+}
+@media only screen and (max-width:637px){
+    .displaycontainer{
+        padding-top: 90px;
+    }
+    .tabs{
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+}
+@media only screen and (max-width:574px){
+    .displaycontainer{
+        padding-top: 90px;
+    }
+    .tabs{
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+}
+@media only screen and (max-width:537px){
+    .displaycontainer{
+        padding-top: 110px;
+    }
+    .tabs{
+        padding-left: 10% !important;
+        padding-right: 10% !important;
+    }
+}
+
+.Appbar{
+    background-color: #fca600;
+}
+
+.phoneicon{
+    color: black;
+}
+
+.breadcrumbs{
+    color: black;
+}
+
+.breadcrumbText{
+    font-family: 'Open Sans';
+    font-size: 250;
+    font-weight: bold;
+}
+
+.tabs{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: black;
+    font-family: 'Open Sans';
+    font-size: medium;
+    font-weight: bold;
+}
+
+.ant-tabs-nav-scroll {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.ant-tabs-nav .ant-tabs-tab-active{
+    color: #fca600 !important;
+    font-weight: bold;
+}
+
+.ant-tabs-ink-bar{
+    background-color: #fca600 !important;
+}
+
+.demo-infinite-container {
+    overflow: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 700px;
+}
+
+.cardmediaimage{
+    width: 100%;
+    height: 70px;
+    padding-top: 20px;
+    object-fit: contain;
+}
+
+.smartcard{
+    border: 0.5px solid #000000;
+    box-shadow: 0px 1px 3px #000000;
+    border-radius: 15px;
+}
+
+.smartcard:hover{
+    border: 0.5px solid #000000;
+    box-shadow: 0px 1px 3px #000000;
+    border-radius: 15px;
+}
+
+.smartcard2{
+    cursor: pointer;
+}
+
+.smartcard2:hover{
+    background-color: #fca600;
+}
+
+.primary{
+    font-family: 'Open Sans';
+    font-size: medium;
+    font-weight: bold;
+}
+
+.secondary{
+    font-family: 'Open Sans';
+    font-size: 11px;
+}
+
+.MuiCardActions-root{
+    justify-content: center;
+    font-family: 'Open Sans';
+}
+
+.learnbutton:hover{
+    background-color: #fca600;
+}
+
+.MuiDialogTitle-root{
+    align-self: center !important;
+}
+
+.dialogTitle{
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.dialogDesc{
+    font-family: 'Open Sans';
+    font-size: 21px;
+}
+
+.modalTitle{
+    font-family: 'Open Sans';
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.TextFieldModal{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.submitButton {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #fbb544, #fcff56);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: black;
+}
+  
+.submitButton .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #fbb544, #fcff56);
+}
+  
+.submitButton:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: white;
+}
+  
+.submitButton:hover {
+    background-image: linear-gradient(-45deg, #ea3948, #3245e8);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+}
+  
+.submitButton:hover .text {
+    background-image: linear-gradient(-45deg, #ea3948, #3245e8);
+}
+
+.submitDesign{
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+
+.ring
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:20px;
+  color:#fca600;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #fca600;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #fca600;
+  border-right:3px solid #fca600;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+.spans
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+.spans:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fca600;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fca600;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+.responseMessage{
+    font-family: 'Open Sans';
+    font-size: 15px;
+    font-weight: bold;
+  
+}
+
+.MuiSnackbarContent-root{
+    justify-content: center;
+}

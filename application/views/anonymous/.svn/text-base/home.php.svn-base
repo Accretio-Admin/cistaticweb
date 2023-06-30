@@ -1,0 +1,255 @@
+<div id="carousel" class="carousel slide">
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+  <marquee><p style="font-size:20px;">WARNING!!!!!!! It has come to the attention of GPRS/UPS that there are certain individuals  falsely soliciting deposits using our bank accounts. Please be warned that GPRS/UPS is in no way involve in soliciting deposits from non UPS/GPRS members.  GPRS/UPS is not in any way liable for  fraudulent transactions entered upon by any individuals demand to make deposit   to our bank accounts on their behalf. GPRS/UPS bank accounts are strictly for GPRS/UPS members transaction only.<p></marquee>
+    <div class="item active">
+      <img src="<?php echo base_url().'assets/images/slider/bills/billspayment.jpg';?>" class="animated fadeIn delay050s" alt="" />
+      <div class="carousel-content">
+	      <div class="container">
+		      <h1 class="carousel-header color animated bounceInDown delay075s">BILLS PAYMENT</h1><br />
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInLeft delay2s">MERALCO</li>
+				      <li class="light animated bounceInUp delay3s">SKYCABLE</li> 
+			      </ul>
+		      </div>
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInRight delay250s">Manila Water</li>     		      
+				      <li class="light animated bounceInDown delay3s">Maynilad</li>	
+				  </ul>
+		      </div>
+
+	      </div>
+      </div>
+      <div class="carousel-caption animated fadeInUp delay050s">
+        <div class="container">
+        	<h3 class="carousel-header">Pay your Bills on time.</h3>
+	        <p class="carousel-body">SAFE and SECURED transaction.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="item">
+      <img src="<?php echo base_url().'assets/images/slider/ecashcenter/remittance.jpg';?>" class="animated bounceIn delay050s" alt="" />
+      <div class="carousel-content">
+	      <div class="container">
+		      <h1 class="carousel-header color animated bounceInDown delay075s">REMITTANCE</h1><br />
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInLeft delay2s">MoneyGram</li>
+				      <li class="light animated bounceInRight delay250s">Transfast</li>
+				  </ul>
+		      </div>
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInDown delay3s">Iremit</li>				      
+				      <li class="light animated bounceInUp delay3s">GPRS Partners</li> 
+			      </ul>
+		      </div>
+
+	      </div>
+      </div>
+      
+      <div class="carousel-caption animated fadeInUp delay050s">
+        <div class="container">
+        	<h3 class="carousel-header">Send and Payout money worldwide.</h3>
+	        <p class="carousel-body">FAST, SAFE and SECURED money transfer.</p>
+        </div>
+      </div>
+    </div>  
+
+    <div class="item">
+      <img src="<?php echo base_url().'assets/images/slider/loading/loading.jpg';?>" class="animated bounceIn delay050s" alt="" />
+      <div class="carousel-content">
+	      <div class="container">
+		      <h1 class="carousel-header color animated bounceInDown delay075s">LOADING</h1><br />
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInLeft delay2s">Smart</li>
+				      <li class="light animated bounceInRight delay250s">Globe</li>
+			      </ul>   
+		      </div>
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInDown delay3s">Sun</li>
+				      <li class="light animated bounceInUp delay3s">M1</li>
+				  </ul>   
+		      </div>
+		      <div class="carousel-body">
+			      <ul>
+				      <li class="light animated bounceInLeft delay2s">Singtel</li>
+				      <li class="light animated bounceInRight delay250s">StarHub</li>
+				  </ul>
+		      </div>
+
+	      </div>
+      </div>
+      
+      <div class="carousel-caption animated fadeInUp delay050s">
+        <div class="container">
+        	<h3 class="carousel-header">Load All Network</h3>
+	        <p class="carousel-body">Unified and Traditional Loading.</p>
+        </div>
+      </div>
+    </div>  
+          
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel" data-slide="prev">
+    <i class="fa fa-angle-left"></i>
+  </a>
+  <a class="right carousel-control" href="#carousel" data-slide="next">
+    <i class="fa fa-angle-right"></i>
+  </a>
+<div class="page-line"></div>  
+  
+</div><!-- .carousel -->
+
+
+<div class="container" id="main">
+
+	<div class="iconbox icon section-small">
+		<div class="row">
+			<div class="col-lg-4">
+				<i class="fa fa-2x fa-bolt"></i>
+				<h5 class="header">BillsPayment</h5>
+				<p class="content">
+					UPS Express Bills Payment provides Fast, Secure and Convenient online bills payment solutions. Now you can manage your entire bills payment process online anytime, anywhere you have Internet availability.
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="fa fa-2x fa-mobile-phone"></i>
+				<h5 class="header">Loading</h5>
+				<p class="content">
+					With UPS Express Loading, start a Loading business using one sim to load all networks and use the UPS Online System to make it easier to keep a record of your daily business transactions. 
+				</p>
+			</div>
+			<div class="col-lg-4">
+				<i class="fa fa-2x fa-plane"></i>
+				<h5 class="header">Ticketing</h5>
+				<p class="content">
+					UPS Express Ticketing is a booking services flight in the Philippines to reach out the people with convenient and easy transaction in all GPRS Branches nationwide.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section-large">
+    
+	  <div class="testimonials section-base">
+	  	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- responsive -->
+		<ins class="adsbygoogle"
+		     style="display:block"
+		     data-ad-client="ca-pub-1406329258745732"
+		     data-ad-slot="4169212606"
+		     data-ad-format="auto"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		<!--	<h3 class="hr2 text-center"><strong>Testimonials:</strong> Let people know how awesome you are</h3>
+			
+			<div class="row">
+				<div class="col-sm-4 single-testimonial">
+					<img src="<?php //echo base_url().'assets/images/team/200x200/team_08.jpg';?>" alt="" height="80" width="80" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, magni unde doloribus ex soluta adipisci vel iste ea et dolorum!
+					</p>
+					<h6>Britney Brixton<br/><small>SaveTheWorld</small></h6>
+				</div>
+				<div class="col-sm-4 single-testimonial">
+					<img src="<?php //echo base_url().'assets/images/team/200x200/team_15.jpg';?>" alt="" height="80" width="80" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, magni unde doloribus ex soluta adipisci vel iste ea et dolorum!
+					</p>
+					<h6>Hubert Hughes<br/><small>KreativeFolks</small></h6>
+				</div>
+				<div class="col-sm-4 single-testimonial">
+					<img src="<?php //echo base_url().'assets/images/team/200x200/team_16.jpg';?>" alt="" height="80" width="80" />
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, magni unde doloribus ex soluta adipisci vel iste ea et dolorum!
+					</p>
+					<h6>Jodie Jameson<br/><small>Women21</small></h6>
+				</div>
+			</div>-->
+		</div>
+        
+		<div class="blog-widget section-large">
+			
+			<div class="row">	
+				<div class="col-sm-3">					
+					<h3 class="hr2"><span><strong>CONTACT US:</strong></span></h3>
+					<a href="http://support.globalpinoyremittance.com"><strong style="color:blue;"><u>ONLINE CUSTOMER SUPPORT</u></strong></a><br><br>
+					<!-- <strong style="color:black;">OUR CUSTOMER SERVICE AGENTS:</strong>
+				    <br/>
+				    <table>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_jeremy" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_jeremy&m=Hello">gprscsr_jeremy@yahoo.com</a><br/></td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_xanelle" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_xanelle&m=Hello">gprscsr_xanelle@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_jonel" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_jonel&m=Hello">gprscsr_jonel@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_geralyn01" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_geralyn01&m=Hello">gprscsr_geralyn01@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_engel" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_engel&m=Hello">gprscsr_engel@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_gen" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_gen&m=Hello">gprscsr_gen@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><img src="http://opi.yahoo.com/online?u=gprscsr_jennie" border="0"/>&nbsp;<a style="color:#4F4F4E;" href="ymsgr:sendIM?gprscsr_jennie&m=Hello">gprscsr_jennie@yahoo.com</a><br/> </td></tr>
+                     	<tr><td><!--<img src="http://opi.yahoo.com/online?u=customercare" border="0"/>&nbsp;<a href="ymsgr:sendIM?customercare&m=Hello">--><!-- <b><span style="color:red;">Email us :</span> customercare@mygprs.ph</b></a><br/> </td></tr> -->
+                     <!-- </table> -->
+                   <!--   <br/>
+                     <strong style="color:black;">OUR RESA AGENTS:</strong> -->
+				    <!-- <br/> -->
+				    <table>
+                     
+                     <!-- 	<b><span style="color:red;">Email us :</span> 
+                     	ticketingsupport@mygprs.ph</b></a><br/> </td></tr>
+                     	<tr><td><b>helpdesk@mygprs.ph</b></td></tr> -->
+
+                     	<tr><h6 class="hr3 margin-top-small margin-bottom-small text-muted"><i class="icon-time"></i>Customer Support Contact Numbers:</h5>
+						<address>
+							<i class="fa fa-phone"></i> <span class="color">Landline:</span> 961-8010<br />
+			                <i class="fa fa-mobile-phone"></i> <span class="color">SMART:</span> 0908-444-2728<br />
+			                <i class="fa fa-mobile-phone"></i> <span class="color">GLOBE:</span> 0917-783-1922<br />
+			                <i class="fa fa-mobile-phone"></i> <span class="color">SUN:</span> 0932-333-4190<br />
+						</address></tr>
+                     </table>
+                     <br/>
+                    <!--  <strong style="color:black;">OUR HELPDESK AGENT:</strong> -->
+				    <br/>
+				    <table>
+                        <!-- <tr><td><b><span style="color:red;">Email us :</span> helpdesk@mygprs.ph</b></td></tr> -->
+                     </table>	
+                   <hr>										
+				</div>
+
+			
+						
+				<div class="col-sm-9">
+                    <!--
+                        <h2>Partners</h2>
+                        <p>
+                            Show between two and eight browseable slides at once utilizing the great <a href="http://bxslider.com/" target="_blank">BxSlider</a> from Steven Wanderski. Perfect to showcase some of the clients you worked with.
+                        </p>
+                        
+                        <ul class="bxslider5">
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_boundary.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_coworker.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_creasoul.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_fork_knife.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_human_rights.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_louda_media.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_optimistic_beverages.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_rio2016.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_three_sixty.png';?>" alt="" /></li>
+                            <li><img src="<?php //echo base_url().'assets/images/clients/client_toadprint.png';?>" alt="" /></li>
+                        </ul>
+                       --> 										
+							
+				</div>	
+				
+			</div>
+		</div>
+		
+	</div>	
+    
+</div><!-- .container -->

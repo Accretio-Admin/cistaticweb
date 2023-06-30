@@ -1,0 +1,85 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Main extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		
+		$this->load->model('curl_model','curl');
+		$this->load->library('session');
+		$this->user = $this->session->userdata('user');
+	    $this->ip = $this->input->ip_address();
+	    $this->load->model('Query_model','q');
+	}
+
+	public function index()
+	{
+		
+
+		
+		$data = array('menu' => 1,
+					 'parent'=>'' );
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+		$data['row']= $this->q->announcement();
+			// $FUND  = $this->curl->get_fund($this->user['R'],$this->ip,$this->user['SKT']);
+			// var_dump($FUND);
+			// die();
+			$data['user'] = $this->user;
+
+			$this->load->view('main/index',$data);
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+
+		}
+	}
+	//MY PROFILE
+	public function myaccount()
+	{
+		$data = array('menu' => 1,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('myaccount/myprofile'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+
+		}
+	
+	}
+	public function account_setting()
+	{
+		$data = array('menu' => 1,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('myaccount/account_setting'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+			
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+
+		}	
+	}
+	//MY PROFILE
+}

@@ -1,0 +1,131 @@
+<div class="container" id="main">
+	<div class="row">
+
+    	<div class="col-md-12">            
+            <h3 class="hr2 padding-top-small"> About Us</h3>
+            <!-- Start of Code -->
+
+            <div class="row">
+            	<div class="col-sm-12">
+            	
+            		<h4 class="hr2 text-center"><strong>Our</strong> History</h4>
+            		<p class="lead">Unified Products and Services, Inc., or UPS for brevity, was established 2011.
+
+The company was initially formed as the marketing arm of a particular company. With the phenomenal growth of the company and its proven expertise in multi-level marketing, Unified Products and Services shifted to be an independent Multi-Level Marketing Company, that caters not only traditional products but also technology-based services, such as e-Cash, ticketing, bills payments and universal loading.
+
+Unified Products and Services, Inc., offers various dealership packages and franchise that will empower global communities towards attaining financial freedom and economic stability.
+
+Unified Products and Services, Inc., exists with the paramount purpose of providing business opportunities to everyone through our world-class quality products and services and breaking the stigma on multi-level marketing by developing professional and globally-competitive multi-level marketing leaders.
+
+The company enshrined in its helm the tenets of Unity, People Oriented, and Service & Products Excellence.</p>	
+            			
+            	</div>
+            	<div class="clearfix"></div>
+            	<div class="col-sm-12">		
+            	
+            		<h4 class="hr2 text-center">Our Company</h4>		
+            		<div class="progress">
+            		  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            		    <strong>VISION</strong>
+            		    <span class="sr-only">95% Complete (success)</span>
+            		  </div>
+            		</div>	
+                    <p>To be the world-class leader in Multi-Level Marketing industry empowering the global community in attaining financial freedom and economic stability.</p>	
+            		<div class="progress">
+            		  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            				<strong>MISSION</strong>
+            		    <span class="sr-only">90% Complete (success)</span>
+            		  </div>
+            		</div>
+                    
+                        <p>To provide business opportunities to individuals through our world-class quality products and services.</p>
+                        <p>To develop professional multi-level marketing leaders who will spearhead an innovative marketing plans.</p>	
+            		<div class="progress">
+            		  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            				<strong>VALUES</strong>
+            		    <span class="sr-only">85% Complete (success)</span>
+            		  </div>
+            		</div>
+                        <ul class="list-icon">
+                            <li><i class="fa fa-check-circle-o"></i> <strong>U</strong>nity</li>
+                            <li><i class="fa fa-check-circle-o"></i> <strong>P</strong>eople Oriented</li>
+                            <li><i class="fa fa-check-circle-o"></i> <strong>S</strong>ervice & Product Excellence</li>
+                        </ul>
+            	</div>
+            </div>
+            
+            <div class="team section-base">
+            	<h3 class="hr2 text-center">UPS TEAM</h3>	
+            	<div class="row">
+            		
+            		<div class="col-sm-4">
+            			<div class="profile">
+            				<img src="<?php echo base_url();?>assets/site/images/team/500x500/nophoto_500x500.png" alt="" />
+            				<div class="details">
+            					<h5 class="name">Emmanuel Pascual</h5>
+            					<div class="position">Founder & CEO</div>
+            					<p class="description">
+            						
+            					</p>
+            					<div class="row social-networks text-center">
+            						<a href="#"><i class="fa fa-twitter icon icon-twitter"></i></a>
+            						<a href="#"><i class="fa fa-facebook icon icon-facebook"></i></a>
+            						<a href="#"><i class="fa fa-google-plus icon icon-google-plus"></i></a>
+            						<a href="#"><i class="fa fa-linkedin icon icon-linkedin"></i></a>
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            		
+            		<div class="col-sm-4">
+            			<div class="profile">
+            				<img src="<?php echo base_url();?>assets/site/images/team/500x500/nophoto_500x500.png" alt="" />
+            				<div class="details">
+            					<h5 class="name">Farrah Pascual</h5>
+            					<div class="position">Finance</div>
+            					<p class="description">
+            						
+            					</p>
+            					<div class="row social-networks text-center">
+            						<a href="#"><i class="fa fa-dribbble icon icon-dribbble"></i></a>	
+            						<a href="#"><i class="fa fa-dropbox icon icon-dropbox"></i></a>	
+            						<a href="#"><i class="fa fa-facebook icon icon-facebook"></i></a>	
+            						<a href="#"><i class="fa fa-flickr icon icon-flickr"></i></a>	
+            						<a href="#"><i class="fa fa-foursquare icon icon-foursquare"></i></a>	
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            		
+            		<div class="col-sm-4">
+            			<div class="profile">
+            				<img src="<?php echo base_url();?>assets/site/images/team/500x500/nophoto_500x500.png" alt="" />
+            				<div class="details">
+            					<h5 class="name">Lea Dimaculangan</h5>
+            					<div class="position">Operations Manager</div>
+            					<p class="description">
+            						
+            					</p>
+            					<div class="row social-networks text-center">
+            						<a href="#"><i class="fa fa-tumblr icon icon-tumblr"></i></a>	
+            						<a href="#"><i class="fa fa-twitter icon icon-twitter"></i></a>	
+            						<a href="#"><i class="fa fa-weibo icon icon-weibo"></i></a>	
+            						<a href="#"><i class="fa fa-windows icon icon-windows"></i></a>	
+            					</div>
+            				</div>
+            			</div>
+            		</div>
+            	
+            	</div>	
+            </div> 
+            
+            <!-- End of Code -->
+    	</div><!-- .col-md-9 -->
+	<!--
+    	<div class="col-md-4">
+             <?php //$this->load->view('element/nav/right_sidebar_ads');?>
+        </div> 
+	-->
+    </div><!-- .row -->
+</div><!-- .container -->
+

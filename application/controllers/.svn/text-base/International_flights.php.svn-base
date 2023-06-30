@@ -1,0 +1,113 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class International_flights extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('curl_model','curl');
+		$this->load->library('session');
+		$this->user = $this->session->userdata('user');
+	    $this->ip = $this->input->ip_address();
+	}
+
+	public function index()
+	{
+		$data = array('menu' => 9,
+					  'parent'=>'DOMESTIC_FLIGHTS' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+		
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlinebooking/international_flights');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+		
+	}
+	public function book_international_flights()
+	{
+		$data = array('menu' => 9,
+					  'parent'=>'DOMESTIC_FLIGHTS' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$data['process'] = array('P' =>  0,
+				 					 'M' => '');
+			if (isset($_POST['btnSearch'])) {
+				$INPUT_POST = $this->input->post(null,true);
+
+				$data['process'] = array('P' =>  1,
+				 						 'M' => $INPUT_POST['optradio']);
+			}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlinebooking/book_international_flights'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+	
+	public function markup_international()
+	{
+		$data = array('menu' => 9,
+					  'parent'=>'DOMESTIC_FLIGHTS' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlinebooking/markup_international'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+
+	public function eticketing_international()
+	{
+		$data = array('menu' => 9,
+					  'parent'=>'DOMESTIC_FLIGHTS' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$data['field'] = array('BOOKING ID','TYPE OF FLIGHT','STATUS','PNR','ITINERARY','BOOKING DATE','CHECK/E-TICKET');
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlinebooking/eticketing_international'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+
+}

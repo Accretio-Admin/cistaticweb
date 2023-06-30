@@ -1,0 +1,39 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Global_function extends CI_Model {
+
+	public function captcha_code()
+	{
+		$captcha = array('code1' => rand(1,25),
+						'code2' => rand(1,25)
+						);
+
+		$this->session->set_userdata('captcha',$captcha);
+		return $captcha;
+	}
+
+	public function captcha_validate($sign_captcha,$total)
+	{
+		if ($sign_captcha != $total) 
+		{
+		
+			
+			return 0;
+		}else {
+			
+			return 1;
+		}
+	}
+
+	public function get_user_session()
+	{	
+		
+		$this->session->set_userdata('user',$this->user);
+		$this->user = $this->session->userdata('user');
+		
+		return  $this->user;;
+	}
+
+	
+}

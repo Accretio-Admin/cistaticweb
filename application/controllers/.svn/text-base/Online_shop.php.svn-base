@@ -1,0 +1,78 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Online_shop extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('curl_model','curl');
+		$this->load->library('session');
+		$this->user = $this->session->userdata('user');
+	    $this->ip = $this->input->ip_address();
+	}
+
+	public function index()
+	{
+		$data = array('menu' => 11,
+					 'parent'=>'' );
+		
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			$this->load->view('onlineshop/index',$data);
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+		
+	}
+	public function malayan_insurance()
+	{
+		$data = array('menu' => 11,
+					  'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlineshop/malayan_insurance'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+	public function buy_codes()
+	{
+		$data = array('menu' => 11,
+					 'parent'=>'' );
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			if (isset($_POST['btnsubmit'])) {
+				$INPUT_POST=$this->input->post(null,true);
+				var_dump($INPUT_POST);
+				die();
+			}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('onlineshop/buy_codes'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+
+}
+		

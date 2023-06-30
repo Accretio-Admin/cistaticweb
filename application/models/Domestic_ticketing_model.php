@@ -1,0 +1,278 @@
+<?php if( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Domestic_ticketing_model extends CI_Model {
+
+	
+	public function get_airports()
+	{
+		//return $this->db->query('SELECT * from gprs_domesticairports order by rowID asc')->result();
+		$airports = array(
+						"BCD" => "Bacolod Domestic",
+						"BSO" => "Basco",
+						"USU" => "Busuanga (CORON)",
+						"BXU" => "Butuan ",
+						"CGY" => "Cagayan de Oro ",
+						" CYP" => "Calbayog",
+						"CGM" => "Camiguin ",
+						"CRM" => "Catarman ",
+						"MPH" => "Caticlan (BORACAY)",
+						"CYZ" => "Cauayan",
+						"CEB" => "Cebu ",
+						"CRK" => "Clark  ",
+						"CBO" => "Cotabato ",
+						"DVO" => "Davao",
+						"DPL" => "Dipolog ",
+						"DGT" => "Dumaguete ",
+						"GES" => "General Santos ",
+						"ILO" => "Iloilo",
+						"JOL" => "Jolo",
+						"KLO" => "Kalibo ",
+						"LAO" => "Laoag ",
+						"LGP" => "Legazpi",
+						"MNL" => "Manila",
+						"MBT" => "Masbate",
+						"WNP" => "Naga ",
+						"OZC" => "Ozamiz ",
+						"PAG" => "Pagadian ",
+						"PPS" => "Puerto Princesa ",
+						"RXS" => "Roxas ",
+						"SJI" => "San Jose ",
+						"IAO" => "Siargao",
+						"SUG" => "Surigao ",
+						"TAC" => "Tacloban ",
+						"TAG" => "Tagbilaran (BOHOL)",
+						"TDG" => "Tandag ",
+						"SGS" => "Tawi-Tawi ",
+						"TUG" => "Tuguegarao",
+						"VRC" => "Virac ",
+						"ZAM" => "Zamboanga "
+							);
+      return  $airports;            
+	}
+
+	public function get_parsed_data($decoded_flight_data,$flight_no,$type)
+	{
+
+		$flight_no = json_decode($flight_no,true);
+
+		foreach ($decoded_flight_data as $each_flight) {
+			foreach ($each_flight['Flights'] as $flights) {
+				if ($flights['CarrierID'].'-'.$flights['FlightNumber'] == $flight_no[1]) {
+					$each_flight_details = $each_flight;	
+				}
+			}
+		}
+
+		if ($type == 1) {
+
+			$parsed_flight_data = array();
+			for ($i=0; $i < count($each_flight_details['Flights']); $i++) { 
+				array_push($parsed_flight_data,$each_flight_details['Flights'][$i]['CarrierID'].'|^@^|'.$each_flight_details['Flights'][$i]['FlightNumber'].'|^@^|'.$each_flight_details['Flights'][$i]['Source'].'|^@^|'.$each_flight_details['Flights'][$i]['Destination'].'|^@^|'.$each_flight_details['Flights'][$i]['DepartureTimeStamp'].'|^@^|'.$each_flight_details['Flights'][$i]['ArrivalTimeStamp'].'|^@^|'.$each_flight_details['Flights'][$i]['Class'].'|^@^|'.$each_flight_details['Flights'][$i]['FareBasis']);
+			}
+
+			$parsed_data = implode("|*|", $parsed_flight_data);
+
+		}else{
+			unset($each_flight_details['Pricing']['MarkupFee']);
+			unset($each_flight_details['Pricing']['is_available']);
+			$parsed_data = "currency:".$each_flight_details['Pricing']['currency'].",BaseFareFee:".$each_flight_details['Pricing']['BaseFareFee'].",TaxFee:".$each_flight_details['Pricing']['TaxFee'].",SystemFee:".$each_flight_details['Pricing']['SystemFee'].",TotalFee:".$each_flight_details['Pricing']['TotalFee'];
+		}
+
+		return $parsed_data;
+		
+	}
+
+	public function get_passengers_count($passenger)
+	{
+		// return $passenger[1]['Type'];
+		// die();
+		$adult = 0;
+		$children = 0;
+		$infant = 0;
+
+		for ($i=0; $i < count($passenger); $i++) { 
+			if ($passenger[$i]['Type'] == 'A' || $passenger[$i]['Type'] == 'S') {
+				$adult = $adult + 1;
+			}elseif ($passenger[$i]['Type'] == 'C') {
+				$children = $children + 1;
+			}elseif ($passenger[$i]['Type'] == 'I') {
+				$infant = $infant + 1;	
+			}
+
+			if ($passenger[$i]['Type'] == 'S') {
+				$senior = 1;
+			}else{
+				$senior = 0;
+			}
+		}
+
+		return array(
+				'senior' => $senior,
+				'adult' => $adult,
+				'children' => $children,
+				'infant' => $infant
+			);
+
+	}
+
+	public function get_parsed_passengers($form_data)
+	{
+		$senior = array();
+		$adult = array();
+		$children = array();
+		$infant = array();
+		foreach ($form_data as $key => $value) {
+			if (substr($key, 0, 2) == 's_') {
+				array_push($senior, $value);
+			}elseif (substr($key, 0, 2) == 'a_') {
+				array_push($adult, $value);
+			}elseif (substr($key, 0, 2) == 'c_') {
+				array_push($children, $value);
+			}elseif (substr($key, 0, 2) == 'i_'){
+				array_push($infant, $value);
+			}
+		}
+
+		$parsed_passengers = array();	
+		if (count($senior) % 7 == 0) {
+			foreach (array_chunk($senior, 7) as $key) {
+				array_push($parsed_passengers,'T:S|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:'.$key[4].'|^@^|OB:'.$key[5].'|^@^|RB:'.$key[6]);
+			}
+		}else{
+			foreach (array_chunk($senior, 6) as $key) {
+				array_push($parsed_passengers,'T:S|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:'.$key[4].'|^@^|OB:'.$key[5].'|^@^|RB:');
+			}
+		}
+
+
+		if (count($adult) % 6 == 0) {
+			foreach (array_chunk($adult, 6) as $key) {
+				array_push($parsed_passengers,'T:A|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:|^@^|OB:'.$key[4].'|^@^|RB:'.$key[5]);
+			}
+		}
+		else{
+			foreach (array_chunk($adult, 5) as $key) {
+				array_push($parsed_passengers,'T:A|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:|^@^|OB:'.$key[4].'|^@^|RB:');
+			}
+		}
+
+		if (count($children) % 6 == 0) {
+			foreach (array_chunk($children, 6) as $key) {
+				array_push($parsed_passengers,'T:C|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:|^@^|OB:'.$key[4].'|^@^|RB:'.$key[5]);
+			}		
+
+		}else{
+			foreach (array_chunk($children, 5) as $key) {
+				array_push($parsed_passengers,'T:C|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:|^@^|OB:'.$key[4].'|^@^|RB:');
+			}
+		}
+
+		if (count($infant) >= 1) {
+			foreach (array_chunk($infant, 4) as $key) {
+				array_push($parsed_passengers,'T:I|^@^|TL:'.$key[0].'|^@^|FN:'.$key[1].'|^@^|LN:'.$key[2].'|^@^|DOB:'.$key[3].'|^@^|S:|^@^|OB:0|^@^|RB:0');
+			}
+		}
+
+		return implode('|*|', $parsed_passengers);
+
+	}
+
+	public function ui_passengers_details($form_data,$baggages)
+	{
+		$senior = array();
+		$adult = array();
+		$children = array();
+		$infant = array();
+		foreach ($form_data as $key => $value) {
+			if (substr($key, 0, 2) == 's_') {
+				array_push($senior, $value);
+			}elseif (substr($key, 0, 2) == 'a_') {
+				array_push($adult, $value);
+			}elseif (substr($key, 0, 2) == 'c_') {
+				array_push($children, $value);
+			}elseif (substr($key, 0, 2) == 'i_'){
+				array_push($infant, $value);
+			}
+		}
+		$title = array('','Mr','Mrs','Miss','Mstr');
+		$parsed_passengers_details = array();
+		if (count($senior) % 7 == 0) {
+			foreach (array_chunk($senior, 7) as $key) {
+				array_push($parsed_passengers_details, array(
+						'T' => 'S',
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3],
+						'SID' => $key[4],
+						'OB' => $baggages['OB'][$key[5]],
+						'RB' => $baggages['RB'][$key[6]]
+					));
+			}
+		}else{
+			foreach (array_chunk($senior, 6) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'S',
+						'Name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'Bdate' => $key[3],
+						'SID' => $key[4],
+						'OB' => $baggages['OB'][$key[5]]
+					));
+			}
+		}
+		if (count($adult) % 6 == 0) {
+			foreach (array_chunk($adult, 6) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'A',	
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3],
+						'OB' => $baggages['OB'][$key[4]],
+						'RB' => $baggages['RB'][$key[4]]
+					));
+			}
+		}
+		else{
+			foreach (array_chunk($adult, 5) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'A',
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3],
+						'OB' => $baggages['OB'][$key[4]]
+					));
+			}
+		}
+
+		if (count($children) % 6 == 0) {
+			foreach (array_chunk($children, 6) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'C',
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3],
+						'OB' => $baggages['OB'][$key[4]],
+						'RB' => $baggages['RB'][$key[4]]
+					));
+			}		
+
+		}else{
+			foreach (array_chunk($children, 5) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'C',
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3],
+						'OB' => $baggages['OB'][$key[4]]
+					));
+			}
+		}
+
+		if (count($infant) >= 1) {
+			foreach (array_chunk($infant, 4) as $key) {
+				array_push($parsed_passengers_details,array(
+						'T' => 'I',
+						'name' => $title[$key[0]].' '.$key[1].' '.$key[2],
+						'bdate' => $key[3]
+					));
+			}
+		}
+
+		return $parsed_passengers_details;
+	}
+
+} 

@@ -1,0 +1,264 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Network extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('curl_model','curl');
+		$this->load->library('session');
+		$this->user = $this->session->userdata('user');
+	    $this->ip = $this->input->ip_address();
+	}
+
+	public function index()
+	{
+		$data = array('menu' => 13,
+					 'parent'=>'' );
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;	
+			$this->load->view('network/index',$data);
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+		
+	}
+	public function genealogy()
+	{
+		$data = array('menu' => 13,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode'    => $this->user['R'],
+				'actionId'   => _get_network_genealogy,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['genealogy'] = json_decode($this->curl->call($parameter,$url),true);
+
+	    	var_dump($data['genealogy']);
+	    	die();
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('network/genealogy'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+	
+	public function mydirectreferrals()
+	{
+		$data = array('menu' => 13,
+					  'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId' 	 => _get_direct_referral,
+				'ip_address' => $this->ip
+	    	);
+	    	$data['direct_referrals'] = json_decode($this->curl->call($parameter,$url),true);
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('network/my_direct_referrals'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+
+	public function myindirectreferrals()
+	{
+		$data = array('menu' => 13,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode'	 => $this->user['R'],
+				'actionId'   => _get_direct_referral,
+				'ip_address' => $this->ip
+	    	);
+	    	$data['indirect_referrals'] = json_decode($this->curl->call($parameter,$url),true);
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('network/my_indirect_referrals'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}	
+	}
+
+	public function mypoints()
+	{
+		$data = array('menu' => 13,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId' 	 => _get_network_summary,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['summary'] = json_decode($this->curl->call($parameter,$url),true)['summary'];
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId'   => _get_weekly_payout,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['weekly_payout'] = json_decode($this->curl->call($parameter,$url),true);
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId'   => _get_payout_history,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['payout_history'] = json_decode($this->curl->call($parameter,$url),true);
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId'   => _get_right_downlines,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['right_downlines'] = json_decode($this->curl->call($parameter,$url),true);
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode'    => $this->user['R'],
+				'actionId'   => _get_left_downlines,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['left_downlines'] = json_decode($this->curl->call($parameter,$url),true);
+
+	    	var_dump($data['summary']);
+	    	echo "<br>";
+	    	var_dump($data['weekly_payout']);
+			echo "<br>";
+	    	var_dump($data['payout_history']);
+	    	echo "<br>";
+	    	var_dump($data['right_downlines']);
+			echo "<br>";
+	    	var_dump($data['left_downlines']);
+
+
+	    	die();
+
+	  //   				$url = url;
+			// $parameter =array(
+			// 	'regcode' => $this->user['R'],
+			// 	'actionId' => _get_network_summary,
+			// 	'ip_address' => $this->ip
+	  //   	);
+
+	  //   	$data['summary'] = json_decode($this->curl->call($parameter,$url),true)['summary'];
+
+	  //   				$url = url;
+			// $parameter =array(
+			// 	'regcode' => $this->user['R'],
+			// 	'actionId' => _get_network_summary,
+			// 	'ip_address' => $this->ip
+	  //   	);
+
+	    	$data['summary'] = json_decode($this->curl->call($parameter,$url),true)['summary'];
+	    	// var_dump($data['result']['summary'][0]['']);
+	    	// die();
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('network/my_points'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+
+
+	public function networkincome()
+	{
+		$data = array('menu' => 13,
+					 'parent'=>'' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+
+			$url = url;
+			$parameter =array(
+				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+				'regcode' 	 => $this->user['R'],
+				'actionId'   => _get_network_income,
+				'ip_address' => $this->ip
+	    	);
+
+	    	$data['network_income'] = json_decode($this->curl->call($parameter,$url),true);
+
+	    	var_dump($data['network_income']);
+	    	die();
+
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('network/network_income'); 
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			//$this->session->unset_userdata('user');
+			$this->session->sess_destroy();
+			redirect('Login/');
+		}
+	}
+}

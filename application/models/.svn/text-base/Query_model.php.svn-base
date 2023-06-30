@@ -1,0 +1,46 @@
+<?php if( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Query_model extends CI_Model {
+
+	function course() {
+
+	return $this->db->query('SELECT * FROM course WHERE STATUS = 1 ORDER BY course_desc ASC')->result();
+
+	}
+
+	function semester() {
+
+	return $this->db->query('SELECT * FROM semester  ORDER BY sem_id ASC')->result();
+
+	}
+
+	function schoolyear() {
+
+	return $this->db->query('SELECT * FROM school_year  ORDER BY sy_desc ASC')->result();
+
+	}
+
+	function yearlevel() {
+
+	return $this->db->query('SELECT * FROM year_level  ORDER BY yrlevel_desc ASC')->result();
+
+	}
+
+	function campus() {
+
+	return $this->db->query('SELECT * FROM campus  ORDER BY campus_desc ASC')->result();
+
+	}
+
+	function announcement(){
+		$sql =  "SELECT * FROM announcements WHERE user_view = 1 AND company_group = 'UPS'  ORDER BY id DESC";
+		$result  = $this->db->query($sql);
+		return $result->result();
+	}
+	
+	function annoucement_count(){
+		$sql =  "SELECT count(*) FROM announcements WHERE user_view = 1 AND company_group = 'UPS'";
+		$result  = $this->db->query($sql);
+		return $result->result();
+	}
+} 

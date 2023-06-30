@@ -1,0 +1,12 @@
+#!/bin/bash
+##sudo yum install php56 php56-gd php56-common php56-xml php56-mysql php56-mcrypt php56-mysqlnd -y
+#rm -rf /etc/httpd/conf.d/welcome.conf
+#mkdir /var/www/testSer/
+#cp /var/www/html/httpd.conf /etc/httpd/conf
+#rm -rf /etc/httpd/conf.d/welcome.conf
+#cp /var/www/html/welcome.conf /etc/httpd/conf.d
+#service httpd restart
+#trylang222
+
+
+

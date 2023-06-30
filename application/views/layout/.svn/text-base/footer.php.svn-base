@@ -1,0 +1,144 @@
+
+    
+
+
+        <script src="<?php echo BASE_URL()?>assets/js/bootstrap-datepicker.js"></script>      
+        <script src="<?php echo BASE_URL()?>assets/js/jquery-2.1.4.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/jquery-migrate-1.2.1.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/jquery.datetimepicker.full.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/script/script.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/modernizr.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/pace.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/retina.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/jquery.cookies.js"></script>
+    
+       <script src="<?php echo BASE_URL()?>assets/js/flot/jquery.flot.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/flot/jquery.flot.resize.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/flot/jquery.flot.spline.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/jquery.sparkline.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/morris.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/raphael-2.1.0.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/bootstrap-wizard.min.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/select2.min.js"></script>
+
+        <script src="<?php echo BASE_URL()?>assets/js/custom.js"></script>
+        <script src="<?php echo BASE_URL()?>assets/js/dashboard.js"></script>
+          <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+      <!--SLIDER-->
+           <script type="text/javascript" src="<?php echo BASE_URL()?>assets/js/jssor.slider.min.js"></script>
+    <!-- use jssor.slider.debug.js instead for debug -->
+    <script>
+        jssor_1_slider_init = function() {
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Cols: 4,
+                $SpacingX: 4,
+                $SpacingY: 4,
+                $Orientation: 2,
+                $Align: 0
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 810);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 100);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", $Jssor$.$WindowResizeFilter(window, ScaleSlider));
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //responsive code end
+        };
+    </script>
+
+    <script>
+        jssor_1_slider_init();
+    </script>
+
+    <!-- MODAL -->
+    <?php if ($API['S'] == 99 ): ?>
+            <script>
+                $(document).ready(function(){
+                    $('#modverification').modal({
+                            backdrop: 'static',
+                            keyboard: false  // to prevent closing with Esc button (if you want this too)
+                        })
+                    $("#modverification").modal('show');
+                });
+            </script>
+    		<!-- Modal -->
+            <div id="modverification" class="modal fade">
+                <div class="modal-dialog">
+                
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                  
+                    <div class="modal-body">
+                        
+                          <p><?php echo $API['M'] ?></p>
+                          <form class="form-horizontal" method="post" action="<?php echo base_url() ?>" id="signin">
+<!--                          <div class="form-group">
+                                <label class="col-sm-3 control-label">Regcode:</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="regcode" id="inputRegcode" placeholder="Regcode" value="<?php echo $API['R'] ?>" readonly>
+                                </div>
+                              </div> -->
+<!--                               <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label" style="padding-right:3px;">Device ID:</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" name="device_id" id="inputDeviceID" placeholder="Device ID" value="<?php echo $API['DI'] ?>" readonly>
+                                  <button type="submit" name="btnResendCode" style="border: 0px; background: none;"><i><u>Resend<span class="glyphicon glyphicon-send" aria-hidden="true"></span></u></i></button> 
+                                </div>
+                              </div> -->
+                              <div class="form-group">
+                                <label for="inputPassword3" class="col-sm-3 control-label" style="padding-right:3px;">Verification Code:</label>
+                                <div class="col-sm-9">
+                                  <input type="hidden" class="form-control" name="regcode" id="inputRegcode" placeholder="Regcode" value="<?php echo $API['R'] ?>" readonly>
+                                  <input type="password" class="form-control" name="verification_code" id="inputVerificationCode" placeholder="Enter Verification Code">
+                                  <button type="submit" name="btnResendCode" style="border: 0px; background: none;"><i><u><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Resend</u></i></button> 
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="col-sm-12">
+                                  <div class="form-group">
+                                    <div class="col-sm-8">
+                                      <a class="btn btn-default pull-right" style="width: 100px;" href="<?php echo base_url() ?>">Cancel</a>
+                                    </div>
+                                    <div class="col-sm-4">
+                                      <button type="submit" class="btn btn-primary pull-right" name="btnConfirmActivation" style="width: 100px;">Submit</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                      </div>
+                  
+                  
+                  </div>
+                  
+                </div>
+              </div>
+              
+
+           
+    <?php endif ?>
+    </body>
+</html>

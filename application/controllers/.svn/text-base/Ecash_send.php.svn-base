@@ -1,0 +1,679 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Ecash_send extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('session');
+	    $this->load->model('Global_function','global_f');
+	    $this->load->model('Curl_model','curl');
+	    $this->ip = $this->input->ip_address();
+	    $this->user = $this->session->userdata('user');
+	}
+
+	public function index()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					'parent'=>'REMITTANCE' );
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			$this->load->view('remittance/ecash_send/index',$data);
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+		
+	}
+
+	public function loadfund()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+		
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+
+			$data['user'] = $this->user;
+				if (isset($_POST['btnSubmit'])) {
+					$url = url;
+
+					$parameter =array(
+								'dev_id'    	   => $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 		   => _loadfund,
+			    				'regcode'          =>$this->user['R'],
+			    				'transpass'	       =>$this->input->post('inputTpass'),
+			    				'amount'	       =>$this->input->post('inputAmountTransaction'),
+			    				'ip_address'       =>$this->ip,
+			    				$this->user['SKT'] =>  md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+						    	); 
+				    $result = $this->curl->call($parameter,$url);
+				    $data['API'] = json_decode($result,true);
+
+					if ($data['API']['S']  == 1) {
+					 	$this->user['PB'] = $data['API']['PB'];
+					 	$this->user['EC'] = $data['API']['EC'];
+					 	$this->user['SB'] = $data['API']['SB'];
+						$data['user'] = $this->global_f->get_user_session();
+					 } 
+				    
+				 
+				}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_to_loadfund');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+
+	}
+
+
+
+		public function sgdfund()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+			$data['user'] = $this->user;
+			if (isset($_POST['btnSubmit'])) {
+					$url = url;
+					
+					$parameter =array(
+								'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 => _sgdfund,
+			    				'regcode'    =>$this->user['R'],
+			    				'transpass'	 =>$this->input->post('inputTpass'),
+			    				'amount'	 =>$this->input->post('inputAmountTransaction'),
+			    				'ip_address' =>$this->ip,
+			    				$this->user['SKT'] =>  md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+						    	); 
+				    $result = $this->curl->call($parameter,$url);
+				    $data['API'] = json_decode($result,true);
+
+
+				    if ($data['API']['S']  == 1) {
+					 	
+					 	$this->user['SB'] = $data['API']['SB'];
+						$data['user'] = $this->global_f->get_user_session();
+					 } 
+				 
+				}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_to_sgdfund');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}	
+
+	}
+
+		public function ecashtoecash()
+	{
+	
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+			if ($this->user['S'] == 1 && $this->user['R'] !=""){
+				$data['user'] = $this->user;
+				if (isset($_POST['btnSubmit'])) {
+						$url = url;
+						$parameter =array(
+									'dev_id'   		    => $this->input->server('HTTP_USER_AGENT'),
+									'actionId' 	 		=> _ecashtoecash,
+				    				'regcode'   	 	=>$this->user['R'],
+				    				'client_regcode' 	=>$this->input->post('inputDealersRegcode'),
+				    				'transpass'	 	 	=>$this->input->post('inputTpass'),
+				    				'amount'	 		=>$this->input->post('inputAmountTransaction'),
+				    				'ip_address'    	=>$this->ip,
+				    				$this->user['SKT']  => md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+							    	); 
+
+					    $result = $this->curl->call($parameter,$url);
+					    $data['API'] = json_decode($result,true);
+					   
+						if ($data['API']['S']  == 1) {
+						
+						 	$this->user['EC'] = $data['API']['EC'];
+						 
+							$data['user'] = $this->global_f->get_user_session();
+						 } 
+					 
+				}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_to_ecash');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');	
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+
+	}
+
+		public function ecashtosmartmoney()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+
+			$data['user'] = $this->user;
+			
+			if (isset($_POST['btnSsearch'])) //Search Sender
+			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'    	    => $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				if ($data['row']['S']==1) {
+					$data['type'] = array('typeid'=>1,
+										 'typedesc'=>'Sender');
+				}
+				
+			 
+ 			}
+ 			elseif (isset($_POST['btnBsearch']))  //Search Benificiary
+ 			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				$senderinfo = explode("|", $this->input->post('inputSenderHide'));
+
+			
+				$data['type'] = array('typeid'=>2,
+									  'typedesc'=>'Benificiary',
+									  'inputSenderName' =>$senderinfo[1],
+									   'inputSender'    => $this->input->post('inputSenderHide'));	
+
+				
+ 			}elseif(isset($_POST['btnSubmit'])) // Process the SMARTMONEY
+ 			{
+ 				$INPUT_POST =$this->input->post(null,true);
+ 				// $T_VALUE =md5(date('m/d/Y').md5('GPRSKEY@)!$w3'));
+ 				$url = url;
+				$parameter =array(
+								'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _ecashtosmartmoney,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'smartmoneyno'		=>$INPUT_POST['inputSnumber'],
+			    				'bene_name'			=>$INPUT_POST['inputBenificiary'],
+			    				'ip_address'		=>$this->ip,
+			    				'amount'			=>$INPUT_POST['inputAmount'],	
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    ); 
+
+				
+			
+				
+			    $result = $this->curl->call($parameter,$url);
+				$data['API'] = json_decode($result,true);
+				
+
+ 				$id = explode("||", $INPUT_POST['inputId']);
+				$data['row'] = array ('smartmoneyno'     =>$INPUT_POST['inputSnumber'],
+									  'inputAmount'      =>$INPUT_POST['inputAmount'],
+									  'inputBenificiary' =>$INPUT_POST['inputBenificiary'],
+									  'senderid'     	 =>$id[0],
+									  'benificiaryid'    =>$id[1],
+									  'idtype'			 =>$INPUT_POST['inputidType'],
+									  'idNo'		     =>$INPUT_POST['inputIdnumber'],
+									  'transpass'        =>$INPUT_POST['inputTpass'],
+									   'charge'          =>$data['API']['C']
+										);
+				
+				
+ 			}elseif(isset($_POST['btnAddDetails']))// add sender and benificiary
+ 			{
+ 				$INPUT_POST =$this->input->post(null,true);
+
+ 				
+ 				$url = url;
+				$parameter =array(
+								'dev_id'    		=> $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_add_user,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'firstname'			=>$INPUT_POST['inputFname'],
+			    				'middlename'		=>$INPUT_POST['inputMname'],
+			    				'lastname'			=>$INPUT_POST['inputLname'],
+			    				'mobileno'			=>$INPUT_POST['inputMobile'],	
+			    				'gender'			=>$INPUT_POST['selGender'],
+			    				'email'				=>$INPUT_POST['inputEmail'],
+			    				'address'			=>$INPUT_POST['inputAddr'],
+			    				'country'			=>$INPUT_POST['selCountry'],
+			    				'birthday'			=>$INPUT_POST['inputBdate'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    );
+				 	$result = $this->curl->call($parameter,$url);
+					$data['result'] = json_decode($result,true);
+					
+ 			}elseif (isset($_POST['btnsmartmoneyconfirm'])) 
+ 			{
+ 			
+ 				$INPUT_POST = $this->input->post(null,true);
+ 				
+ 				$url = url;
+				$parameter =array(
+								'dev_id'    	    => $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_send_smartmoney_confirm,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'smartmoneyno'		=>$INPUT_POST['inputSmartmoney'],
+			    				'sender_id'			=>$INPUT_POST['inputSenderid'],
+			    				'bene_id'			=>$INPUT_POST['inputBenificiaryId'],
+			    				'idnumber'			=>$INPUT_POST['inputIdnumber'],	
+			    				'idtype'			=>$INPUT_POST['inputIdtype'],
+			    				'ip_address'		=>$this->ip,
+			    				'amount'			=>$INPUT_POST['inputAmount'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    );
+				 	$result = $this->curl->call($parameter,$url);
+					$data['result'] = json_decode($result,true);
+
+					if ($data['result']['S']  == 1) {
+						
+						$this->user['EC'] = $data['result']['EC'];
+							 
+						$data['user'] = $this->global_f->get_user_session();
+					 } 
+					
+ 			}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_to_smartmoney');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+
+	}
+
+
+	
+		public function ecashpadala()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+
+			$data['user'] = $this->user;
+			
+			if (isset($_POST['btnSsearch'])) //Search Sender
+			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				if ($data['row']['S']==1) {
+					$data['type'] = array('typeid'=>1,
+										 'typedesc'=>'Sender');
+				}
+				
+			 
+ 			}
+ 			elseif (isset($_POST['btnBsearch']))  //Search Benificiary
+ 			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				$senderinfo = explode("|", $this->input->post('inputSenderHide'));
+
+			
+				$data['type'] = array('typeid'=>2,
+									  'typedesc'=>'Benificiary',
+									  'inputSenderName' =>$senderinfo[1],
+									   'inputSender'    => $this->input->post('inputSenderHide'));	
+
+				
+ 			}elseif(isset($_POST['btnSubmit'])) // Process the SMARTMONEY
+ 			{
+
+ 				$INPUT_POST =$this->input->post(null,true);
+ 				
+ 			
+ 				$url = url;
+				$parameter =array(
+								'dev_id'    	    => $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_send_ecash_padala,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'amount'			=>$INPUT_POST['inputAmount'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    ); 
+
+				
+			    $result = $this->curl->call($parameter,$url);
+				$data['API'] = json_decode($result,true);
+
+				if ($data['API']['S']  == 1) {
+						 	$this->user['PB'] = $data['API']['PB'];
+						 	$this->user['EC'] = $data['API']['EC'];
+						 	$this->user['SB'] = $data['API']['SB'];
+							$data['user'] = $this->global_f->get_user_session();
+						 } 
+
+ 				$data['row'] = explode("||", $INPUT_POST['inputId']);
+
+				
+ 			}elseif(isset($_POST['btnAddDetails']))// add sender and benificiary
+ 			{
+ 				$INPUT_POST =$this->input->post(null,true);
+
+ 				$T_VALUE =md5(date('m/d/Y').md5('GPRSKEY@)!$w3'));
+ 				$url = url;
+				$parameter =array(
+								'dev_id'    	    => $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_add_user,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'firstname'			=>$INPUT_POST['inputFname'],
+			    				'middlename'		=>$INPUT_POST['inputMname'],
+			    				'lastname'			=>$INPUT_POST['inputLname'],
+			    				'mobileno'			=>$INPUT_POST['inputMobile'],	
+			    				'gender'			=>$INPUT_POST['selGender'],
+			    				'email'				=>$INPUT_POST['inputEmail'],
+			    				'address'			=>$INPUT_POST['inputAddr'],
+			    				'country'			=>$INPUT_POST['selCountry'],
+			    				'birthday'			=>$INPUT_POST['inputBdate'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    );
+				 	$result = $this->curl->call($parameter,$url);
+					$data['API'] = json_decode($result,true);
+					
+ 			}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_padala');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+
+	}
+
+
+
+	public function ecashcredittobank()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+
+			$data['user'] = $this->user;
+			
+			if (isset($_POST['btnSsearch'])) //Search Sender
+			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				if ($data['row']['S']==1) {
+					$data['type'] = array('typeid'=>1,
+										 'typedesc'=>'Sender');
+				}
+				
+			 
+ 			}
+ 			elseif (isset($_POST['btnBsearch']))  //Search Benificiary
+ 			{
+ 				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+
+				$senderinfo = explode("|", $this->input->post('inputSenderHide'));
+
+			
+				$data['type'] = array('typeid'=>2,
+									  'typedesc'=>'Benificiary',
+									  'inputSenderName' =>$senderinfo[1],
+									   'inputSender'    => $this->input->post('inputSenderHide'));	
+
+				
+ 			}elseif(isset($_POST['btnSubmit'])) // Process the ecashcredittobank
+ 			{
+ 				
+ 				$INPUT_POST =$this->input->post(null,true);
+ 				
+
+ 				$T_VALUE =md5(date('m/d/Y').md5('GPRSKEY@)!$w3'));
+ 				$url = url;
+				$parameter =array(
+								'dev_id'    		=> $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_send_credit_bank,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'amount'			=>$INPUT_POST['inputAmount'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    ); 
+
+				
+			    $result = $this->curl->call($parameter,$url);
+				$data['API'] = json_decode($result,true);
+
+				if ($data['API']['S']  == 1) {
+						 	$this->user['PB'] = $data['API']['PB'];
+						 	$this->user['EC'] = $data['API']['EC'];
+						 	$this->user['SB'] = $data['API']['SB'];
+							$data['user'] = $this->global_f->get_user_session();
+						 } 
+ 				$data['row'] = explode("||", $INPUT_POST['inputId']);
+
+				
+ 			}elseif(isset($_POST['btnAddDetails']))// add sender and benificiary
+ 			{
+ 				$INPUT_POST =$this->input->post(null,true);
+
+ 				$T_VALUE =md5(date('m/d/Y').md5('GPRSKEY@)!$w3'));
+ 				$url = url;
+				$parameter =array(
+								'dev_id'     		=> $this->input->server('HTTP_USER_AGENT'),
+								'actionId' 	 		=> _remittance_add_user,
+			    				'regcode'   		=>$this->user['R'],
+			    				'transpass' 		=>$INPUT_POST['inputTpass'],
+			    				'firstname'			=>$INPUT_POST['inputFname'],
+			    				'middlename'		=>$INPUT_POST['inputMname'],
+			    				'lastname'			=>$INPUT_POST['inputLname'],
+			    				'mobileno'			=>$INPUT_POST['inputMobile'],	
+			    				'gender'			=>$INPUT_POST['selGender'],
+			    				'email'				=>$INPUT_POST['inputEmail'],
+			    				'address'			=>$INPUT_POST['inputAddr'],
+			    				'country'			=>$INPUT_POST['selCountry'],
+			    				'birthday'			=>$INPUT_POST['inputBdate'],
+			    				$this->user['SKT']	=>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				    );
+				 	$result = $this->curl->call($parameter,$url);
+					$data['API'] = json_decode($result,true);
+					
+ 			}
+			$this->load->view('layout/header',$data);
+			$this->load->view('element/top_header');
+			$this->load->view('element/wrapper_header');
+			$this->load->view('element/left_panel');
+			$this->load->view('remittance/ecash_send/ecash_credit_to_bank');
+			$this->load->view('element/wrapper_footer');
+			$this->load->view('layout/footer');
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+
+
+	}
+
+
+		public function ecashtocashcard()
+	{
+		if ($this->user['A_CTRL']['remittance'] == 1){
+		$data = array('menu' => 2,
+					  'parent'=>'REMITTANCE' );
+
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+				$data['user'] = $this->user;
+			if (isset($_POST['btnBsearch'])) {
+				$search = $this->input->post('inputSearch');
+ 				$url = url;
+				$parameter =array(
+							'dev_id'    	    => $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		=> _remittance_search_cashcard_user,
+		    				'search_key'   	 	=>$search,
+		    				'regcode' 			=>$this->user['R']
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+				$data['row'] = json_decode($result,true);
+			
+						
+			}elseif (isset($_POST['btnSubmit']))
+			{
+				 $INPUT_POST=$this->input->post(null,true);
+				 $receipient = explode(",", $INPUT_POST['inputData']);
+			
+			    $url = url;
+				$parameter =array(
+							'dev_id'     		 => $this->input->server('HTTP_USER_AGENT'),
+							'actionId' 	 		 => _remittance_cashcard_confirm,
+		    				'regcode'   	 	 =>$this->user['R'],
+		    				'acctno' 			 =>$receipient[1],
+		    				'receipient_f'		 =>$receipient[2],
+		    				'receipient_m'		 =>$receipient[3],
+		    				'receipient_l'		 =>$receipient[4],
+		    				'transpass'			 =>$INPUT_POST['inputTpass'],
+		    				'amount'			 =>$INPUT_POST['inputAmount'],
+		    				'ip_address'    	 =>$this->ip,
+		    				$this->user['SKT']	 =>md5($this->user['R'].$this->user['SKT'].md5($this->input->post('inputTpass')))
+		    				); 
+
+			    $result = $this->curl->call($parameter,$url);
+			    	
+				$data['result'] = json_decode($result,true);
+				
+				if ($data['result']['S']  == 1) {
+						 	$this->user['PB'] = $data['API']['PB'];
+						 	$this->user['EC'] = $data['API']['EC'];
+						 	$this->user['SB'] = $data['API']['SB'];
+							$data['user'] = $this->global_f->get_user_session();
+						 } 
+			} 
+				$this->load->view('layout/header',$data);
+				$this->load->view('element/top_header');
+				$this->load->view('element/wrapper_header');
+				$this->load->view('element/left_panel');
+				$this->load->view('remittance/ecash_send/ecash_to_cashcard');
+				$this->load->view('element/wrapper_footer');
+				$this->load->view('layout/footer');
+
+		}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}}else {
+			$this->session->unset_userdata('user');
+			redirect('Login/');
+		}
+	}
+	
+
+}

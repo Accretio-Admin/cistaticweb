@@ -1,0 +1,150 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Login extends CI_Controller {
+
+   	public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('session');
+		$this->user = $this->session->userdata('user');
+	    $this->load->model('Global_function','global_f');
+	    $this->load->model('Curl_model','curl');
+	    $this->ip = $this->input->ip_address();
+	}
+
+	public function index()
+	{	
+		// if ($this->input->server('REMOTE_ADDR') == '122.54.71.220') {
+		// 	echo "asd";
+		// 	die();
+		// }
+		
+		if (null !== $this->input->post('btnsignin')) {
+			
+			
+			
+			$username = $this->input->post('sign_username');
+			$password = $this->input->post('sign_password');
+			$url = url;
+		    $parameter = array(
+		    				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+		    				'ip_address' => $this->ip,
+		    				'actionId' 	 => 'ups_login',
+		    				'username'   => $username,
+		    				'password'	 => $password,
+		    				'platform'	 => PLATFORM,
+		    				'appid' 	 => APPID,
+		    				'appver'	 => APPVER,
+		    				'flag'		 => FLAG
+		    			); 
+
+		    $result = $this->curl->call($parameter,$url);
+		    $API = json_decode($result,true);
+
+			if ($API) {
+				if ($API['S'] == 1) {
+					$this->session->set_userdata('user',$API);
+					redirect('/main');
+				}elseif ($API['S'] == 99) {
+					// var_dump($API);
+		 		// 	die();
+					$data['result'] = $API;
+					$data['process'] = 1;
+				}else{
+					$data['result'] = array(	
+					  	'S' => 0,
+					  	'M' =>$API['M']
+					);
+				}
+			}else{
+				$data['result'] = array(	
+				  	'S' => 0,
+				  	'M' => 'Login Failed..Please try again'
+				);
+			}
+			
+		}
+
+		if (null !== $this->input->post('btnConfirmActivation')) {
+			$regcode = $this->input->post('regcode');
+			$verification_code = $this->input->post('verification_code');
+			$dev_id = $this->input->post('device_id');
+			$url = url.'/verify_device';
+		    $parameters = array(
+		    				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+		    				'ip_address' => $this->ip,
+		    				'regcode' 	 => $regcode,
+		    				'acode'   => $verification_code
+		    			);
+		    $result = $this->curl->call($parameters,$url);
+		    $API = json_decode($result,true);
+
+			if ($API) {
+				$data['result'] = array(	
+				  	'S' => $API['S'],
+				  	'M' =>  $API['M']
+				);
+
+			}else{
+				$data['result'] = array(	
+				  	'S' => 0,
+				  	'M' => 'Please try again'
+				);
+			}
+		}
+
+		if (null !== $this->input->post('btnResendCode')) {
+			$regcode = $this->input->post('regcode');
+			$verification_code = $this->input->post('verification_code');
+			$dev_id = $this->input->post('device_id');
+			$url = url.'/resend_email_code';
+		    $parameters = array(
+		    				'dev_id'     => $this->input->server('HTTP_USER_AGENT'),
+		    				'ip_address' => $this->ip,
+		    				'regcode' 	 => $regcode
+		    			);
+		    $result = $this->curl->call($parameters,$url);
+		    $API = json_decode($result,true);
+			if ($API) {
+				if ($API['S'] == 1) {
+					$data['result'] = array('R' => $regcode,'DI' => $dev_id);
+					$data['process'] = 1;
+				}else{
+					$data['result'] = array(	
+					  	'S' => 0,
+					  	'M' =>$API['M']
+					);
+				}
+
+			}else{
+				$data['result'] = array(	
+				  	'S' => 0,
+				  	'M' => 'Please try again'
+				);
+			}
+		}
+
+
+		$this->load->view('layout/header',$data);
+		$this->load->view('login/index',$data);
+		$this->load->view('layout/footer');
+	}
+
+	public function user_logout()
+	{
+		if ($this->user['S'] == 1 && $this->user['R'] !=""){
+
+			$this->session->sess_destroy();
+			redirect('login/');
+		}		
+	}
+
+
+
+
+
+}
+
+
+		
