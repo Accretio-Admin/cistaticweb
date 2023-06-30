@@ -74,15 +74,19 @@
 
 <script>
     $('#proceed').on('click', function(){
+        waitingDialog.show('Please Wait.', {dialogSize: 'sm', progressType: 'primary'});
         <?php if($referral): ?>
-            // window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>')
-            swal({
-                title: 'Nice!',
-                text: "<?php echo $referral?>",
-                icon: 'success',
-                buttons: false,
-            })
+            window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>')
+            $(this).attr('disabled', true);
+            // swal({
+            //     title: 'Nice!',
+            //     text: "<?php echo $referral?>",
+            //     icon: 'success',
+            //     buttons: false,
+            // })
+            waitingDialog.hide();
         <?php else: ?>
+            waitingDialog.hide();
             swal({
                 title: 'Ooppss!',
                 text: 'No Referral',

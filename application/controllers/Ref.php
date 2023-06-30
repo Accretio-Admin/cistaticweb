@@ -33,6 +33,7 @@ class Ref extends CI_Controller {
         $data['referral'] = $referral;
         $this->load->view('layout/header');
 		$this->load->view('anonymous/redirect', $data); 
+        $this->load->view('layout/footer');
 	}
 
 }
