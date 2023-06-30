@@ -140,11 +140,11 @@ define('TB', 1099511627776);
 
 
 //API
-define('api_token','GPRSKEY@)!$w3');
-define('APPID','ihgQ949^1b'); //app_id 
-define('APPVER','1.3.4'); //appver
-define('PLATFORM','52d121521462cb3acd05f10439ef3664');//platform 
-define('FLAG','1');//flag
+define('api_token',decrypt(getenv('api_token'),getenv('password')));
+define('APPID',decrypt(getenv('APPID'),getenv('password'))); //app_id
+define('APPVER',getenv('APPVER')); //appver
+define('PLATFORM',getenv('PLATFORM'));//platform 
+define('FLAG',getenv('FLAG'));//flag 
 
 	// -- verify device
 define('_verify_device', 'verify_device');
@@ -158,10 +158,10 @@ if($SANDBOX_MODE){
 	//define('url','http://172.16.16.10:8008/webportal');
 }else{
 	define('url_mobilereports','https://mobilereports.globalpinoyremittance.com/portal');	
-	// define('url','https://pubsubnet.globalpinoyremittance.com/webportal_dev?op=pa');
-	define('url','https://pubsubnet.globalpinoyremittance.com/webportal?op=pa');
+	// define('url','https://unifiedpubsub.azurewebsites.net/webportal_dev?op=pa');
+	define('url','https://unifiedpubsub.azurewebsites.net/webportal?op=pa');
 	// define('url','https://mobileapi.unified.ph//webportal?op=pa');
-	define('url_old','https://pubsubnet.globalpinoyremittance.com/webportal');
+	define('url_old','https://unifiedpubsub.azurewebsites.net/webportal');
 	define('sso_url', 'http://sso.bentanayan.com');
 	define('sso_client_id','1901286');
 	define('sso_client_secret','abcVDspEyxyeObZVttpBu7ka1aaqa5cpFBbHDlb7');
@@ -170,10 +170,8 @@ if($SANDBOX_MODE){
 define('_login','ups_login');
 define('_forgot','ups_login/forgot_login_password');
 define('_registration','ups_registration_service/dealer_register');
-define('_check_mobile_number','ups_registration_service/check_mobile_number_smsgateway');
-// define('_check_mobile_number','ups_registration_service/check_mobile_number');
-define('_verify_mobile_number','ups_registration_service/verify_mobile_number_smsgateway');
-// define('_verify_mobile_number','ups_registration_service/verify_mobile_number');
+define('_check_mobile_number','ups_registration_service/check_mobile_number');
+define('_verify_mobile_number','ups_registration_service/verify_mobile_number');
 define('_check_email','ups_registration_service/check_email_address');
 define('_verify_email','ups_registration_service/verify_email_address');
 
@@ -507,7 +505,7 @@ define("_cart_inventory_confirm",'ups_inventory_test/cart_inventory_confirm');
 define("_cart_confirm",'ups_inventory_test/cart_confirm');
 define("_hub_inventory_list",'ups_inventory_test/hub_inventory_list');
 
-define('fetch_biller_bc','ups_billspay_service/fetch_biller_lists_bayadcenter'); //testing for demo bayadcenter
+
 define('_fetch_biller_infos','ups_billspay_service/fetch_biller_list');
 // define('_fetch_biller_infos','ups_billspay_service/fetch_biller_list_test'); // testing for gcash
 

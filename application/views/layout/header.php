@@ -8,7 +8,11 @@
         <meta name="author" content="">
       
         <?php if ($user['CG'] =="UPS"): ?>
-            <?php if(substr($user['R'],0,3) == 'GRM' || $API['R'] == 'F5880126' || $user['R'] == 'F9175006' || $user['R'] == 'G7979485' || $user['R'] == 'F1205575' || $user['R'] == 'F1145677' || $user['R'] == 'F1164754' || $user['R'] == 'F1198933' || $user['R'] == 'F3989172'): ?>
+            <?php if(
+                    (is_array($user) && isset($user['R']) && substr($user['R'], 0, 3) == 'GRM') ||
+                    (is_array($API) && isset($API['R']) && $API['R'] == 'F5880126') ||
+                    (is_array($user) && isset($user['R']) && in_array($user['R'], ['F9175006', 'G7979485', 'F1205575', 'F1145677', 'F1164754', 'F1198933', 'F3989172']))
+                ): ?>
                 <title>Ricemart</title>
             <?php elseif (substr($user['R'],0,3) == 'GWL' || $user['R'] == 'GWL0987'): ?>
                 <title>Wealthy Lifestyle</title>
@@ -24,7 +28,11 @@
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
        <?php if ($user['CG'] =="UPS"): ?>
-           <?php if (substr($user['R'],0,3) == 'GRM' || $API['R'] == 'F5880126' || $user['R'] == 'F9175006' || $user['R'] == 'G7979485' || $user['R'] == 'F1205575' || $user['R'] == 'F1145677' || $user['R'] == 'F1164754' || $user['R'] == 'F1198933' || $user['R'] == 'F3989172'): ?>
+           <?php if (
+                (is_array($user) && isset($user['R']) && substr($user['R'], 0, 3) == 'GRM') ||
+                (is_array($API) && isset($API['R']) && $API['R'] == 'F5880126') ||
+                (is_array($user) && isset($user['R']) && in_array($user['R'], ['F9175006', 'G7979485', 'F1205575', 'F1145677', 'F1164754', 'F1198933', 'F3989172']))
+            ): ?>
                 <link rel="shortcut icon" href="<?php echo BASE_URL()?>assets/login_new/images/ricemart-label.png" class="next-head">
             <?php elseif (substr($user['R'],0,3) == 'GWL' || substr($user['R'],0,3) == 'DWL' || $user['R'] == 'GWL0987'): ?>
                 <link rel="shortcut icon" href="<?php echo BASE_URL()?>assets/images/logo2.png" class="next-head">

@@ -183,11 +183,9 @@ $("#btn_continue").click(function () {
   $("#selInsuranceFederalv2").change(function () {
     $("#federalNotev2").css("display", "none");
     var mnote = $(this).children("option:selected").data("id"); // select attribute (data-desc)
-    
     // console.log(mnote);
     $("#fpgOption").val(mnote);
-    waitingDialog.show('Please Wait Before Selecting Coverage', {dialogSize: 'sm', progressType: 'primary'});
-    
+  
     coverage_limits();
   });
   
@@ -323,7 +321,32 @@ $("#btn_continue").click(function () {
   // var coverageDetails = $("#coverage").val();
   // var res = coverageDetails.split("|");
   
-
+  // if (mnote == 1) {
+  //   document.getElementById("note10").innerHTML = "PHP 100,000.00";
+  //   document.getElementById("note20").innerHTML = "PHP 50,000.00";
+  //   document.getElementById("note30").innerHTML = "PHP 10,000.00";
+  //   document.getElementById("note40").innerHTML = "PHP 10,000.00";
+  // } else if (mnote == 2) {
+  //   document.getElementById("note10").innerHTML = "PHP 60,000.00";
+  //   document.getElementById("note20").innerHTML = "PHP 30,000.00";
+  //   document.getElementById("note30").innerHTML = "PHP 6,000.00";
+  //   document.getElementById("note40").innerHTML = "PHP 6,000.00";
+  // } else if (mnote == 3) {
+  //   document.getElementById("note10").innerHTML = "PHP 50,000.00";
+  //   document.getElementById("note20").innerHTML = "PHP 5,000.00";
+  //   document.getElementById("note30").innerHTML = "PHP 5,000.00";
+  //   document.getElementById("note40").innerHTML = "PHP 25,000.00";
+  // } else if (mnote == 4) {
+  //   document.getElementById("note10").innerHTML = "PHP 40,000.00";
+  //   document.getElementById("note20").innerHTML = "PHP 4,000.00";
+  //   document.getElementById("note30").innerHTML = "PHP 4,000.00";
+  //   document.getElementById("note40").innerHTML = "PHP 20,000.00";
+  // } else if (mnote == 5) {
+  //   document.getElementById("note10").innerHTML = "PHP 20,000.00";
+  //   document.getElementById("note20").innerHTML = "PHP 2,000.00";
+  //   document.getElementById("note30").innerHTML = "PHP 2,000.00";
+  //   document.getElementById("note40").innerHTML = "PHP 10,000.00";
+  // }
   
   // document.getElementById("note60").innerHTML =
   //   "PHP " +
@@ -365,7 +388,6 @@ $("#btn_continue").click(function () {
   
   function coverage_limits() {
     var option = $("#selInsuranceFederalv2").children("option:selected").data("id");
-    
   
     $.ajax({
       method: "POST",
@@ -374,27 +396,18 @@ $("#btn_continue").click(function () {
       dataType: "HTML",
       beforeSend: function () {
         // $('.btn').prop('disabled', true);
-        $('inputCoveragev2').prop('disabled', true)
-        
       },
       complete: function () {
         // $('.btn').prop('disabled', null);
-        waitingDialog.hide()
-        
       },
       success: function (response) {
         var rate = JSON.parse(response);
-        console.log("rate",rate)
-        
-        $('#inputCoveragev2').removeAttr('disabled')
         // $.each(rate, function (key, data) {
         $("#inputCoveragev2").change(function () {
-          
           $("#federalNotev2").css("display", "block");
           var coverageDetails = $(this).children("option:selected").val();
           var res = coverageDetails.split("|");
           var coverageid = res[0];
-          console.log("coverageid",coverageid)
   
           if (coverageid === "1") {
             document.getElementById("note10v2").innerHTML =
@@ -495,6 +508,7 @@ $("#btn_continue").click(function () {
               "PHP " + Number(rate[8]["amount_due"]).toFixed(2);
           }
         });
+        
       },
       error: function () {
         alert("FAILED!");

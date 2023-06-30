@@ -8,7 +8,6 @@ function checkKYC() {
     contentType: false,
     success: function (data) {
       res = JSON.parse(data)
-      console.log("pota", res)
       if (res.S == 4) {
         modal(1)
         $('#kycmsg').show();
