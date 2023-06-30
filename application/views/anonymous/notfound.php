@@ -6,14 +6,14 @@
     }
 
     .fit-image{
-        width: 100%;
-        /* object-fit: cover; */
-        height: 100%; /* only if you want fixed height */
+        width: 450px;
+        height: 350px;
     }
 
-    /* body{
-        background-color: red;
-    } */
+    html, body {
+            background-color: var(--yellow-yellow-004, #F4B000);
+        height: 100%;
+    }
     .ups-btnRecords{
         height: 56px;
         width: 322px;
@@ -56,36 +56,17 @@
 </script>
 
 <body class="font-poppins">
- 
     <div class="contentpanel container my-container">
         <div class="row vcenter">
             <div class="col-md-3"></div>
             <div class="col-md-6 text-center">
-                <h2 class="mt-1 mb-1">Experience seamless transaction with Unified!</h2>
-                <image class="fit-image rounded mt-2 mb-2" src="<?php echo BASE_URL()?>assets/images/redirect.png"></image>
-                <h4 class="mb-2">Start your journey with a Unified account today!</h4>
-                <button type="button" class="ups-btnRecords btn-yellow" id="proceed">Proceed to Registration <i class="glyphicon glyphicon-center glyphicon-menu-right"></i></button>
+                <h1 class="" style="color: white; font-size: 125px;">404</h1>
+                <div style="background-color: white; border-radius: 25px;">
+                    <image class="fit-image rounded mt-2 mb-2" src="<?php echo BASE_URL()?>assets/images/somethingWentWrong.png"></image>
+                </div>
+                <h2 class="mt-1" style="font-size: 45px;">PAGE NOT FOUND!</h2>
             </div>
             <div class="col-md-3"></div>
         </div>
     </div>
 </body>
-
-<script>
-    $('#proceed').on('click', function(){
-        waitingDialog.show('Please Wait.', {dialogSize: 'sm', progressType: 'primary'});
-        <?php if($referral): ?>
-            window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>')
-            $(this).attr('disabled', true);
-            waitingDialog.hide();
-        <?php else: ?>
-            waitingDialog.hide();
-            swal({
-                title: 'Ooppss!',
-                text: 'No Referral',
-                icon: 'warning',
-                buttons: false,
-            })
-        <?php endif; ?>
-    })
-</script>
