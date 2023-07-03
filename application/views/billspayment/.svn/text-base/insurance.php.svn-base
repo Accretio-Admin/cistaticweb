@@ -1,0 +1,91 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                   <li>BILLS PAYMENT</li>
+                                </ul>
+                                <h4>INSURANCE</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+                    <div class="contentpanel">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-5">
+                                <?php if ($API['S'] === 0): ?>
+                                <div class="alert alert-danger"><b><?php echo $API['M'] ?></b></div>
+                                <?php endif ?>
+                                <?php if ($API['S']== 1 && $submitBtn == 1): ?>
+                                <div class="alert alert-success">&nbsp;&nbsp;<b><?php echo $API['M'] ?> </b><br /><a href="https://mobilereports.globalpinoyremittance.com/portal/billspayment_receipt/<?php echo $API['TN'];  ?>" target="_blank"><?php echo $API['TN'];  ?></a>
+                                   &nbsp;&nbsp;<small>Click transaction number to download reciept.</small>
+                                </div>
+                                </div>
+                                <?php endif ?>
+                                <div class="form-group">
+                                    <select class="form-control" name="selBiller" id="selBiller">
+                                        <option value="" disabled selected>CHOOSE INSURANCE BILLER</option>  
+                                    <?php 
+                                    foreach ($biller as $key): 
+                                     $pieces = explode("|", $key);
+                                     $BD = strtoupper($pieces[0]);
+                                     $BC = strtoupper($pieces[1]);
+                                     $FT = strtoupper($pieces[2]);
+                                    ?>
+                                        <option value="<?php echo $BC ?>" data-type ="<?php echo $FT ?>" data-desc = "<?php echo $FT ?>" ><?php echo $BD ?></option>  
+                                    <?php endforeach ?>
+                                    </select>
+                                </div>
+
+                                <!-- data type == 1 -->  
+                                <div class="utilities1" > 
+                                    <form name="frmInsuranceLoading" action="<?php echo BASE_URL() ?>Bills_payment/insurance" method="post" id="frmInsuranceLoading">
+                                       <div class="form-group" id="divBiller1"> </div>   
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="ACCOUNT NUMBER" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="inputSubscriberName" placeholder="SUBSCRIBER NAME" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div><!-- data type == 1 --> 
+
+                                <!-- data type == 11 -->  
+                                <div class="utilities11" > 
+                                    <form name="frmInsuranceLoading" action="<?php echo BASE_URL() ?>Bills_payment/insurance" method="post" id="frmInsuranceLoading">
+                                       <div class="form-group" id="divBiller11"> </div>   
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="POLICY ACCOUNT NUMBER" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="inputSubscriberName" placeholder="SUBSCRIBER NAME" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div><!-- data type == 11 --> 
+                            </div>
+                        </div><!-- row -->
+                    </div><!-- contentpanel -->
+                    
+    </div><!-- mainpanel -->            

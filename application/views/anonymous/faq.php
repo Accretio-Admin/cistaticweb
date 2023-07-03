@@ -1,0 +1,27 @@
+<div class="container" id="main">
+
+    <h3 class="hr2 margin-top-large margin-bottom-large"><span><strong>Get YOUR</strong> Manuals Here</span></h3>
+    	<div class="col-sm-8">
+            <ul class="faq list-unstyled">
+            <li>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" href="#1"><i class="icon-question-sign"></i>Download the PDF manuals</a></h4>
+                    </div>
+                    <div id="1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                        <!-- Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. -->
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/generalFAQ.pdf';?>" target="_blank">GENERAL FAQ.PDF</a><br><br>
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/loadingFAQ.pdf';?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;LOADING FAQ.PDF</a><br><br>
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/remittanceFAQ.pdf';?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;REMITTANCE FAQ.PDF</a><br><br>
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/ticketingrevised.pdf';?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;TICKETING FAQ.PDF</a><br><br>
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/oltickFAQ.pdf';?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;ONLINE SUPPORT FAQ.PDF</a><br><br>
+                            <a class="btn btn-primary" href="<?=base_url().'assets/dl/pinsuranceFAQ.pdf';?>" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;PERSONAL INSURANCE FAQ.PDF</a>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            </ul>
+        </div>
+</div>

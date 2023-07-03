@@ -1,0 +1,67 @@
+
+      <div class="mainpanel">
+            <div class="pageheader">
+                <div class="media">
+                    <div class="pageicon pull-left">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <div class="media-body">
+                        <ul class="breadcrumb">
+                            <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                            <li>HOME</li>
+                        </ul>
+                        <h4>ACCOUNT SETTING</h4>
+                    </div>
+                </div><!-- media -->
+            </div><!-- pageheader -->
+
+            <div class="contentpanel">
+                  <div class="row">
+                      <div class="col-xs-6 col-md-4">
+                           <i class="glyphicon glyphicon-play"></i><a href="#" id="aPass">&nbsp;Change Transaction Password</a>
+                      </div>
+                      <div class="col-xs-6 col-md-4">
+                           
+                                  <div class="jumbotron" id="divpass" style="display:none">
+                                      
+                                          <h3 class="hr2"><span>Change Password</span></h3>
+                                          <hr />
+                                          <p class="text-center text-muted">Transaction Password</p>
+                                          <!-- Start Flash Messages -->
+                                          <!-- End Flash Messages -->
+                                          <form method="post" action="">
+                                              <div class="form-group">
+                                                  <label>Current password : </label>
+                                                  <input type="password" class="form-control col-md-6" name="curr_pass" required="">
+                                              </div>
+                                              <div class="form-group">
+                                                  <label>New password : </label>
+                                                  <input type="password" class="form-control" name="new_pass" required="">
+                                              </div>
+                                              <div class="form-group">
+                                                  <label>Confirm new password : </label>
+                                                  <input type="password" class="form-control" name="con_pass" required="">
+                                              </div>
+                                              <div class="row">
+                                                  <div class="col-xs-6 col-md-6">
+                                                     <div class="form-group margin-top-small margin-bottom-large">
+                                                        <a href="#" class="pull-left" >Cancel</a>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-xs-6 col-md-6">
+                                                      <div class="form-group margin-top-small margin-bottom-large">
+                                                             <button class="btn btn-primary pull-right" type="submit">Submit</button>
+                                                      </div>
+
+                                                  </div>
+                                              </div>
+                                              
+                                          </form>                  
+                                 </div>
+
+                      </div>
+                  </div>
+
+            </div><!-- contentpanel -->
+                        
+     </div><!-- mainpanel -->            

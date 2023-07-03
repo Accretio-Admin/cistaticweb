@@ -1,0 +1,114 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>REPORT</li>
+                                </ul>
+                                <h4>REPORT</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel">
+
+                        <div class="row row-stat">
+                            <div class="col-sm-9 col-md-9">
+                                <div class="tab-content nopadding noborder">
+                                    <div class="tab-pane active" id="activities">
+                                        <div class="follower-list">  
+                                            <div class="col-sm-12">
+                                                <div class="row media-manager">
+                                                    <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb" >
+                                                          <div class="thmb-prev  text-center">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL()?>Report/general_report" class="">
+                                                                <img  src="<?php echo BASE_URL() ?>assets/images/reports/general_reports.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL()?>Report/general_report">GENERAL REPORT</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>   
+                                                     <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL()?>Report/ecash">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/remittance_send.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL()?>Report/ecash">REMITTANCE SEND</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>   
+                                                     <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL()?>Report/ecash_payout">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/remittance_send.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL()?>Report/ecash_payout">REMITTANCE PAYOUT</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>   
+                                                     <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL()?>Report/bills_payment" id="aloading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/bills_payment.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL()?>Report/bills_payment" id="aloading">BILLS PAYMENT</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>
+                                                       <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL()?>Report/loading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/online_purchase.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL()?>Report/loading">LOADING</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+                                                   
+                                                    <!-- Report/ticketing -->
+<!--                                                      <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="#"> 
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/ticketing.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="#">TICKETING</a></h5>
+                                                        </div>
+                                                     </div>  
+-->
+
+                                                    <!-- Report/online_purchase -->
+<!--                                                      <div class="col-xs-6 col-sm-4 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="#">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/reports/online_purchase.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="#">ONLINE PURCHASED</a></h5>
+                                                        </div>
+                                                     </div>  
+-->
+
+                                                 </div>
+                                             </div>      
+                                        </div><!-- activity-list -->
+
+                                    </div><!-- tab-pane -->
+
+                                </div>
+                            </div><!-- col-md-8 -->
+                        </div><!-- row -->
+
+                    </div><!-- contentpanel -->
+                    
+                </div><!-- mainpanel -->            

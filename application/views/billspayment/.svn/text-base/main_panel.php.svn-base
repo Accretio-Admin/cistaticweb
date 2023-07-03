@@ -1,0 +1,121 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>BILLS PAYMENT</li>
+                                </ul>
+                                <h4>BILLS PAYMENT</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel">
+
+                        <div class="row row-stat">
+                            <div class="col-sm-9 col-md-9">
+                                <div class="tab-content nopadding noborder">
+                                    <div class="tab-pane active" id="activities">
+                                        <div class="follower-list">  
+                                            <div class="col-sm-12">
+                                                <div class="row media-manager">
+                                                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb" >
+                                                          <div class="thmb-prev  text-center">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/utilities" class="" id="billsPaymentLoading">
+                                                                <img  src="<?php echo BASE_URL() ?>assets/images/billspayment/utilities_new.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/utilities" id="billsPaymentLoading">UTILITIES</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>   
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/telecom" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/telecom_new.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/telecom" id="billsPaymentLoading">TELECOM</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>   
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/airlines" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/airlines_new.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/airlines" id="billsPaymentLoading">AIRLINES</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>
+
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/credit_card" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/creditcards_new.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/credit_card" id="billsPaymentLoading">CREDIT CARDS</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+
+                                                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/government" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/government_new.png" class="img-responsive" alt=""  style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/government" id="billsPaymentLoading">GOVERNMENT</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+
+                                                      <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/insurance" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/insurance_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/insurance" id="billsPaymentLoading">INSURANCE</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+
+                                                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/schools" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/school_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/schools" id="billsPaymentLoading">SCHOOLS</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+                                                      <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>Bills_payment/others" id="billsPaymentLoading">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/billspayment/others_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>Bills_payment/others" id="billsPaymentLoading">OTHERS</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div> 
+                                                 </div>
+                                             </div>      
+                                        </div><!-- activity-list -->
+
+                                    </div><!-- tab-pane -->
+
+                                </div>
+                            </div><!-- col-md-8 -->
+                        </div><!-- row -->
+
+                    </div><!-- contentpanel -->
+                    
+                </div><!-- mainpanel -->            

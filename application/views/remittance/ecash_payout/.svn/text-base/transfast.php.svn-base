@@ -1,0 +1,134 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>ECASH</li>
+                </ul>
+                <h4>TRANSFAST</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-bottom: 0px;">
+        <?php if ($API['S'] === 0): ?>
+        <div class="alert alert-danger"><b><?php echo $API['M'] ?></b></div>
+        <?php endif ?>
+        <?php if ($API['S']== 1): ?>
+        <div class="alert alert-success"><b><?php echo $API['M'] ?></b></div>
+        <?php endif ?>
+        <div class="row row-stat">
+        <?php if ($API['S'] == ""): ?>
+            <div class="col-md-5">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="padding-top: 15px; padding-bottom: 0px;">
+                  <h5 style="font-weight: bold; color: #4169E1;">TRANSFAST</h5>
+                  </div>
+                  <div class="panel-body">
+                    <form name="frmtransfast" action="<?php echo BASE_URL() ?>ecash_payout/transfast" method="post" class="frmclass">
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="inputReferenceNo" placeholder="REFERENCE NO." required/>
+                      </div>
+                      <div class="form-group">
+                          <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required/>
+                      </div>
+                       <div class="form-group text-right">
+                          <button type="submit" class="btn btn-primary"  name="btnTransfastCheck">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                 </div>
+              </div>   
+            </div>
+            <?php endif ?>
+            <?php if ($API['S'] == "1"): ?>
+            <div class="col-md-5">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="padding-top: 0px; padding-bottom: 0px;">
+                  <h5 style="font-weight: bold; color: #4169E1;">NEW YORK BAY</h5>
+                  </div>
+                  <div class="panel-body" style="padding-top: 0px;">
+                    <form name="frmtransfast" action="<?php echo BASE_URL() ?>ecash_payout/newyorkbay" method="post" class="frmclass">
+                    <hr />
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">REFERENCE NUMBER:</span>
+                          <input type="text" class="form-control" name="inputReferenceNo" value="<?php echo $row['inputReferenceNo']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 31px;">TRANSACTION NO.:</span>
+                          <input type="text" class="form-control" name="inputTN" value="<?php echo $API['TN']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 82px;">CURRENCY:</span>
+                          <input type="text" class="form-control" name="inputCurrency" value="<?php echo $API['Currency']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 99px;">AMOUNT:</span>
+                          <input type="text" class="form-control" name="inputAmount" value="<?php echo $API['inputAmount']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 24px;">BENEFICIARY NAME:</span>
+                          <input type="text" class="form-control" name="inputBeneficiaryName" value="<?php echo $API['Benefirstname'].' '.$API['Benemiddlename'].' '.$API['Benelastname']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 77px;">MOBILE NO.:</span>
+                          <input type="text" class="form-control" name="inputBenetelno" value="<?php echo $API['Benetelno']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 92px;">ADDRESS:</span>
+                          <input type="text" class="form-control" name="inputBeneaddress" value="<?php echo $API['Beneaddress']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" name="selvalidID" id="selvalidID">
+                           <option value="" disabled selected>--CHOOSE VALID ID--</option>  
+                           <option value="SSS">SSS</option>
+                           <option value="PhilHealth">PhilHealth</option>
+                           <option value="Company">Company</option>
+                           <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="inputIDNo" placeholder="ID NUMBER" required/>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Cancel</a>
+                                <button name="btnTransfastConfirm" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="inputTpass" value="<?php echo $row['inputTpass']; ?>" />
+                        <input type="hidden" class="form-control" name="inputSessionID" value="<?php echo $API['sessionId']; ?>" />
+                        <input type="hidden" class="form-control" name="inputTransType" value="1" />
+                    </div>
+                    </form>
+                  </div>
+                </div>
+               </div> 
+            </div>
+            <?php endif ?>
+        </div>
+    </div>
+</div>

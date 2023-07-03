@@ -1,0 +1,192 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-money"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                   <li>BILLS PAYMENT</li>
+                </ul>
+                <h4>SCHOOLS</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+    
+    <div class="contentpanel">
+        <div class="row">
+            <div class="col-xs-12 col-md-5">
+                <?php if ($API['S'] === 0): ?>
+                <div class="alert alert-danger"><b><?php echo $API['M'] ?></b></div>
+                <?php endif ?>
+                <?php if ($API['S']== 1 && $submitBtn == 1): ?>
+                <div class="alert alert-success">&nbsp;&nbsp;<b><?php echo $API['M'] ?> </b><br /><a href="https://mobilereports.globalpinoyremittance.com/portal/billspayment_receipt/<?php echo $API['TN'];  ?>" target="_blank"><?php echo $API['TN'];  ?></a>
+                   &nbsp;&nbsp;<small>Click transaction number to download reciept.</small>
+                </div>
+                <?php endif ?>
+                <div class="form-group">
+                    <select class="form-control" name="selBiller" id="selBiller">
+                        <option value="" disabled selected>CHOOSE SCHOOL BILLER</option>  
+                    <?php 
+                    foreach ($biller as $key): 
+                     $pieces = explode("|", $key);
+                     $BD = strtoupper($pieces[0]);
+                     $BC = strtoupper($pieces[1]);
+                     $FT = strtoupper($pieces[2]);
+                    ?>
+                        <option value="<?php echo $BC ?>" data-type ="<?php echo $FT ?>" data-desc = "<?php echo $FT ?>" ><?php echo $BD ?></option>  
+                    <?php endforeach ?>
+                    </select>
+                </div>
+
+                <!-- data type == 1 && 8-->  
+                <div class="utilities1" >  
+                    <form name="frmSchoolsLoading" action="<?php echo BASE_URL() ?>Bills_payment/schools" method="post" id="frmSchoolsLoading">
+                       <div class="form-group" id="divBiller1"> </div>   
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="ACCOUNT NUMBER" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputSubscriberName" placeholder="SUBSCRIBER NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                        </div>
+                    </form>
+                </div><!-- data type == 1 --> 
+
+                <!-- data type == 6-->  
+                <div class="utilities6" > 
+                    <form name="frmSchoolsLoading" action="<?php echo BASE_URL() ?>Bills_payment/schools" method="post" id="frmSchoolsLoading">
+                       <div class="form-group" id="divBiller6"> </div>   
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="STUDENT NUMBER" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputSubscriberName" placeholder="SUBSCRIBER NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                        </div>
+                    </form>
+                </div><!-- data type == 6 -->
+
+                <!-- data type == 9-->  
+                <div class="utilities9" > 
+                    <form name="frmSchoolsLoading" action="<?php echo BASE_URL() ?>Bills_payment/schools" method="post" id="frmSchoolsLoading">
+                       <div class="form-group" id="divBiller9"> </div>   
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="STUDENT NUMBER" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputSubscriberName" placeholder="STUDENT NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                        </div>
+                    </form>
+                </div><!-- data type == 9 --> 
+
+                <!-- data type == 13-->  
+                <div class="utilities13" > 
+                    <form name="frmSchoolsLoading" action="<?php echo BASE_URL() ?>Bills_payment/schools" method="post" id="frmSchoolsLoading">
+                       <div class="form-group" id="divBiller13"> </div>   
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputAccountNumber" placeholder="STUDENT NUMBER" required />
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                <select class="form-control" name="selSchoolYear" id="selSchoolYear">
+                                    <option value="" disabled selected>SCHOOL YEAR</option>  
+                                   <?php foreach ($sy as $row): ?>
+                                   <option value="<?php echo $row->sy_id; ?>"><?php echo $row->sy_desc; ?></option>
+                                   <?php endforeach ?>
+                                </select>
+                                </div>
+                                <div class="col-xs-12 col-md-6">
+                                <select class="form-control" name="selSem" id="selSem">
+                                   <option value="" disabled selected>SEMESTER</option>  
+                                   <?php foreach ($sem as $row): ?>
+                                   <option value="<?php echo $row->sem_id; ?>"><?php echo $row->sem_desc; ?></option>
+                                   <?php endforeach ?>
+                                </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputLastName" placeholder="LAST NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputFirstName" placeholder="FIRST NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inputMiddleName" placeholder="MIDDLE NAME" required/>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="selCourse" id="selCourse">
+                                <option value="" disabled selected>COURSE</option>  
+                                <?php foreach ($course as $row): ?>
+                                <option value="<?php echo $row->course_id; ?>"><?php echo $row->course_desc; ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="selYearLevel" id="selYearLevel">
+                                <option value="" disabled selected>YEAR LEVEL</option> 
+                                <?php foreach ($yrlevel as $row): ?>
+                                <option value="<?php echo $row->yrlevel_id; ?>"><?php echo $row->yrlevel_desc; ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="selCampus" id="selCampus">
+                                <option value="" disabled selected>CAMPUS</option> 
+                                <?php foreach ($campus as $row): ?>
+                                <option value="<?php echo $row->campus_id; ?>"><?php echo $row->campus_desc; ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control"  name="inputAmount" placeholder="AMOUNT" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required />
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="submit" class="btn btn-primary" name="btnSubmit" value="1">SUBMIT</button>
+                        </div>
+                    </form>
+                </div><!-- data type == 13 --> 
+            </div>
+            <div class="col-xs-12 col-md-7">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8">
+                        <div class="form-group">
+                            <div class="alert alert-info alert-biller" style="display:none;word-wrap:break-word;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- row -->
+    </div><!-- contentpanel -->               
+</div><!-- mainpanel -->            

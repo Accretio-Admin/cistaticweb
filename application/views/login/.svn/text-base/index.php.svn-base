@@ -1,0 +1,113 @@
+
+  <body class="login-body">
+      <section>
+          <?php if (is_null($process)): ?>
+            <div class="contentpanel">
+              <div class="col-md-8 col-md-offset-2" style="margin-top: 1%;" i>
+                  <?php if ($result['S'] === 0 || $result['S'] === '0'): ?>
+                      <div class="alert alert-danger"><?php echo $result['M'] ?></div>
+                  <?php elseif ($result['S'] === 1 || $result['S'] === '1'): ?>
+                      <div class="alert alert-success"><?php echo $result['M']?><?php echo '<br> Please Log-In to continue.'?></div>
+                  <?php endif ?>
+                  <div class="panel panel-default">
+                      <!-- Default panel contents -->
+                      <div class="panel-heading">
+                          <div class="row">
+                              <div class="col-md-5">
+                                  <h2 class="text-center">Web Application</h2>
+                              </div>
+                              <div class="col-md-7">
+                                  <div class="row">
+                                      <form action="<?php echo base_url() ?>Login/" method="post" id="signin">
+                                          <div class="col-md-5"  style="padding-right:0px;">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">Username</label>
+                                                <input type="text" class="form-control" name="sign_username" id="inputUsername" placeholder="Username">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-5" style="padding-left:0px;">
+                                              <div class="form-group">
+                                                <label for="exampleInputEmail1">Password</label>
+                                                <input type="password" class="form-control col-md-12" name="sign_password" id="inputPassword"  placeholder="Password">
+                                                <p><u>Register Dealer</u></p>   
+                                              </div>
+                                          </div>
+                                          <div class="col-md-2" style="padding-left:0px;">
+                                              <div class="form-group">
+                                                <button class="btn btn-default" name="btnsignin" style="margin-top: 24px;">Login</button> 
+                                              </div>
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                    </div>
+                    <div class="panel-body">
+                      <iframe src="https://mobilereports.globalpinoyremittance.com/portal/news" style="width:100%; height:450px;"></iframe>
+                    </div>
+                  </div>
+              </div>
+          <?php elseif ($process == 1): ?>
+              <div class="col-md-4 col-md-offset-4" style="margin-top: 10%;">
+                  <div class="panel panel-default">
+                      <div class="panel-heading">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <p><?php echo $result['M'] ?></p>
+
+                                  <form class="form-horizontal" method="post" action="<?php echo base_url() ?>Login/" id="signin">
+                                  <form class="form-horizontal" method="post" action="<?php echo base_url() ?>Login/" id="signin">
+                                      
+                                  <form class="form-horizontal" method="post" action="<?php echo base_url() ?>Login" id="signin">
+<!--                                     
+                                      <div class="form-group">                                   
+                                        <div class="col-sm-9">
+                                          
+                                          <button type="submit" name="btnResendCode" style="border: 0px; background: none;"><i><u>Resend</u></i></button> 
+                                        </div>
+                                      </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">Regcode:</label>
+                                        <div class="col-sm-9">
+                                          <input type="text" class="form-control" name="regcode" id="inputRegcode" placeholder="Regcode" value="<?php echo $result['R'] ?>" readonly>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-3 control-label" style="padding-right:3px;">Device ID:</label>
+                                        <div class="col-sm-9">
+                                          <input type="text" class="form-control" name="device_id" id="inputDeviceID" placeholder="Device ID" value="<?php echo $result['DI'] ?>" readonly>
+                                          <button type="submit" name="btnResendCode" style="border: 0px; background: none;"><i><u>Resend Activation Code</u></i></button> 
+                                        </div>
+                                      </div> 
+-->
+                                      <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-3 control-label" style="padding-right:3px;">Verification Code:</label>
+                                        <div class="col-sm-9">
+                                          <input type="hidden" class="form-control" name="regcode" id="inputRegcode" placeholder="Regcode" value="<?php echo $result['R'] ?>" readonly>
+                                          <input type="password" class="form-control" name="verification_code" id="inputVerificationCode" placeholder="Enter Verification Code">
+                                          <button type="submit" name="btnResendCode" style="border: 0px; background: none;"><i><u><span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Resend</u></i></button> 
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="col-sm-12">
+                                          <div class="form-group">
+                                            <div class="col-sm-8">
+                                              <a class="btn btn-default pull-right" style="width: 100px;" href="<?php echo base_url() ?>">Cancel</a>
+                                            </div>
+                                            <div class="col-sm-4">
+                                              <button type="submit" class="btn btn-primary pull-right" name="btnConfirmActivation" style="width: 100px;">Submit</button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <?php endif ?>
+      </section>
+   
+</body>

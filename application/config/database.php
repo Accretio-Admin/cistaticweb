@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => 'trainingdb.mysql.database.azure.com',
+	'username' => 'saadmin',
+	'password' => 'ACCRETIO@ecashpay1',
+	'database' => 'gprsnetwork',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

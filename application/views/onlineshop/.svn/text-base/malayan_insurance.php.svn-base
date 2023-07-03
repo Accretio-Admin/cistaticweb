@@ -1,0 +1,113 @@
+		<div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>ONLINE SHOP</li>
+                                </ul>
+                                <h4>E-INSURANCE</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+
+                    
+                    <div class="contentpanel">
+
+                        <div class="row row-stat">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="tab-content nopadding noborder">
+                                    <div class="tab-pane active" id="activities">
+                                        <div class="follower-list">  
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                  <div class="col-xs-8 col-md-8">
+                                                    <div class="row">
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <div class="form-group">
+                                                              <select class="form-control" id="selInsurance" name="selInsurance">
+                                                                    <option value="" disabled selected>Please Choose your Policy</option>
+                                                                    <option value="1">Policy 1</option>
+                                                                    <option value="1">Policy 2</option>
+                                                                    <option value="1">Policy 3</option>
+                                                                    <option value="1">Policy 4</option>
+                                                              </select> 
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputFname" placeholder="FirstName" required />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputMname" placeholder="M.I" required  />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputLname" placeholder="LastName" required  />
+                                                           </div>
+                                                           <hr />
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputbFname" placeholder="Benificiary FirstName" required />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputbMname" placeholder="Benificiary M.I" required  />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputbLname" placeholder="Benificiary LastName" required  />
+                                                           </div>
+                                                           <hr />
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" id="datetimepicker" name="inputBdate" required readonly />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="text" class="form-control" name="inputOccup" placeholder="Occupation" required  />
+                                                           </div>
+                                                           <div class="form-group">
+                                                                <input type="email" class="form-control" name="inputEmail" placeholder="Email Address" required  />
+                                                           </div>
+                                                           <div class="form-group text-right">
+                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                           </div>
+                                                        </div>
+                                                        <div class="col-xs-6 col-md-7">
+                                                              <table class="table table-stripped">
+                                                                    <thead>
+                                                                        <th>Coverage</th>
+                                                                        <th>Limits</th>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <td>
+                                                                        Accident Death, Dismemberment<br /> &/or Disablment <br />
+                                                                        Burial Assistance <br /> (Due to Accident Death)<br />
+                                                                        Premium Period <br />of Cover
+                                                                        </td>
+                                                                        <td>  <br />
+                                                                           ?100,000<br /><br />
+                                                                           ?10,000<br /><br />
+                                                                           ?75.00<br /><br />
+                                                                         </td>
+
+
+                                                                    </tbody>
+                                                              </table>
+                                                        </div>
+                                                    </div>
+                                                      
+                                                  </div>
+                                                    <div class="col-xs-4 col-md-4 text-right">
+                                                        <img class="company-logo" src="<?php echo BASE_URL()?>assets/images/malayan_logo.png" alt="">
+                                                    </div>
+                                                </div>  
+                                             </div>      
+                                        </div><!-- activity-list -->
+
+                                    </div><!-- tab-pane -->
+
+                                </div>
+                            </div><!-- col-md-8 -->
+                        </div><!-- row -->
+
+                    </div><!-- contentpanel -->
+                    
+    </div><!-- mainpanel -->            

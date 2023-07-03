@@ -1,0 +1,450 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>ECASH</li>
+                </ul>
+                <h4>E-CASH PAYOUT CENTER</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-top: 0px;">
+      <div class="row row-stat">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+          	  <h3 style="text-align: center;">OUR ACCREDITED CORPORATE ACCOUNTS WITH REMITTANCE SERVICE</h3>
+              <div class="contentpanel" style="padding: 0px;"> 
+                <div class="panel panel-default" style="border: 0px;">
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                     	<div class="thmb">	
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="exquisiteImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/EXQUISITE_PAWNSHOP.png" class="img-responsive thmb-icons" alt="" >
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">EXQUISITE PAWNSHOP</a></h5>
+                         </div>
+                    </div>
+	                <div class="col-xs-6 col-sm-6 col-md-3 document">
+	                    <div class="thmb">
+	                      <div class="thmb-prev">
+	                        <a style="background-color: #fff;" href="#">
+	                            <img id="davaoenaImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/DAVAOENA PAWSHOP.png" class="img-responsive thmb-icons" alt="">
+	                        </a>
+	                      </div>
+	                      <h5 class="fm-title text-center"><a href="#">DAVAOENA PAWSHOP</a></h5>
+	                    </div><!-- thmb -->
+	                </div> 
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="gemcraftImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/GEMCRAFT PAWNSHOP.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">GEMCRAFT PAWNSHOP</a></h5>
+                        </div><!-- thmb -->
+                    </div> 
+                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="kwartagramImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/KWARTAGRAM.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">KWARTAGRAM</a></h5>
+                        </div><!-- thmb -->
+                     </div> 
+                  </div>
+                  <div class="row">
+                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="gprsImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/GPRS.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">GLOBAL PINOY REMITTANCE AND SERVICES</a></h5>
+                        </div><!-- thmb -->
+                     </div> 
+                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="gpttImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/GPTT.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">GLOBAL PINOY <br />TRAVEL AND TOURS</a></h5>
+                        </div><!-- thmb -->
+                     </div> 
+                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="srtImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/SRT.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">AMAZING SKYRUPER <br />TRAVEL AND TOURS</a></h5>
+                        </div><!-- thmb -->
+                     </div>
+                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="dominionImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/DOMINION_PAWNSHOP.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">DOMINION PAWNSHOP</a></h5>
+                        </div><!-- thmb -->
+                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+	                    <div class="thmb">
+	                      <div class="thmb-prev">
+	                        <a style="background-color: #fff;" href="#">
+	                            <img id="gppImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/GPP.png" class="img-responsive thmb-icons" alt="">
+	                        </a>
+	                      </div>
+	                      <h5 class="fm-title text-center"><a href="#">GLOBAL PINOY PAWNSHOP</a></h5>
+	                    </div><!-- thmb -->
+                    </div> 
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="merlinImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/MERLIN_PAWNSHOP.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">MERLIN PAWNSHOP</a></h5>
+                        </div><!-- thmb -->
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="sppImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/SPP.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">PATRICK PAWNSHOP</a></h5>
+                        </div><!-- thmb -->
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-3 document">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a style="background-color: #fff;" href="#">
+                                <img id="smpImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/SMP.png" class="img-responsive thmb-icons" alt="">
+                            </a>
+                          </div>
+                          <h5 class="fm-title text-center"><a href="#">SAVEMORE PHARMACY AND MINIMART</a></h5>
+                        </div><!-- thmb -->
+                    </div>
+                  </div>
+                  <div class="row">
+                 	<div class="col-xs-6 col-xs-offset-3 col-sm-6 col-md-6 col-md-offset-3 document">
+	                    <div class="thmb">
+	                      <div class="thmb-prev">
+	                        <a style="background-color: #fff;" href="#">
+	                            <img id="upsImg" src="<?php echo BASE_URL() ?>assets/images/ecash_payout/UPS.png" class="img-responsive thmb-icons" alt="">
+	                        </a>
+	                      </div>
+	                      <h5 class="fm-title text-center"><a href="#">UNIFIED PRODUCTS AND SERVICES</a></h5>
+	                    </div><!-- thmb -->
+                 	</div>
+                  </div>
+
+
+                </div>
+              </div> 
+          </div>
+      </div>
+    </div> 
+
+    <!--EXQUISITE Modal-->
+    <div id="exquisiteModal" class="modal fade">
+      <div class="modal-dialog" style="align: center; padding-top: 10%;">
+        <div class="modal-content" style="width: 90%;">
+          <div class="modal-header" style="padding-bottom: 0px;">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="color: #4169E1;"> EXQUISITE PAWNSHOP</h4>
+              <h5> - Masterlist of outlets for your reference </h5>
+          </div>
+          <div class="modal-body">
+            <div class="contentpanel" style="padding: 0px;"> 
+            	<form name="frmExquisite" action="<?php echo BASE_URL() ?>ecash_payout/printdetails" method="post" class="frmclass">
+	              <div class="panel panel-default" style="padding: 0px;">
+	                <div style='overflow:auto; width:500px;height:300px;'>
+	                    <div class="form-group">
+	                        <p> 1 Voyager's Arcade, Tiano Brother's Street  Poblacion Cagayan De Oro City</p>
+	                        <p> 2 Unit 4 G/Flr Suites Hotel Rizal Avenue  Puerto Princesa Palawan City</p>
+	                        <p> 3 F. Abella St. Corner G. Abogado Street  Borongan  Borongan City</p>
+	                        <p> 4 2nd Floor Gie Gardens Hotel, MH Del Pilar Street.,  Bohol Tagbilaran City</p>
+	                        <p> 5 Eusebio Arcade IV, Araneta-Hernaez Street Brgy.28 Bacolod City</p>
+	                        <p> 6 Esperanza Road  Bayugan Agusan Del Sur</p>
+	                        <p> 7 49 Airport Road Bohol Tagbilaran City</p>
+	                        <p> 8 E.A.R Bldg. Stall #2 Arellano Street  Poblacion Tagum City</p>
+	                        <p> 9 98 San Diego Street Sampaloc  Manila City</p>
+	                        <p>10 34-D De Castro Bldg. Barlin Street  Poblacion Naga City</p>
+	                        <p>11 Yungue Street Agora Market  La Carlota Negros Occidental</p>
+	                        <p>12 #61 Pendatun Avenue Gen. San  General Santos</p>
+	                        <p>13 Door 1 Oca?a Bldg. Kalipayan Road Brgy.62-B Tacloban City</p>
+	                        <p>14 Talisay Cebu Region 7 Talisay Cebu City</p>
+	                        <p>15 Blk.7 Lot 1 Golden Acres Village Marcos Alvarez Talon 5 Las Pinas City</p>
+	                        <p>16 Malabanias Poblacion  Angeles Pampanga city</p>
+	                        <p>17 G/F Fe Amada Bldg. Villanueva Exit  Butuan  Butuan City</p>
+	                        <p>18 Blk.6 L01 San Lorenzo Ruiz DBBE Dasmarinas  Cavite City</p>
+	                        <p>19 10 Anson Road Unit #17-05 International Plaza Singapore Singapore</p>
+	                        <p>20 PO Box 2000237,4th flr. Dar As Salam Bldg. Alashat Street old Al-ghanem Doha Qatar</p>
+	                        <p>21 Presidential Road cor. Constitutional Road  Batasan Hills Quezon City</p>
+	                        <p>22 138 San Jose Poblacion  Gusu  Zambaoanga City</p>
+	                        <p>23 Door 23 Lopez Arcade E. Lopez Street  Jaro  Iloilo City</p>
+	                        <p>24 Villa Victoria Subd. Bulo Victoria  Tarlac City</p>
+	                        <p>25 Plaza Pacita  San Pedro Laguna City</p>
+	                        <p>26 Rm.901 ADCP bldg. Tower C Electra Street  Abu Dhabi UAE</p>
+	                        <p>27 15/f Chan Pao Ching Bldg. 427-429 Henessy Road  Causeway Bay  Hongkong</p>
+	                        <p>28 #1520 Jr. Bldg. Brgy. South Triangle  Quezon Avenue Quezon City</p>
+	                        <p>29 Ground Flr. Rafael YU Bldg. Gen Maxilom Avenue  Cebu Proper Cebu City</p>
+	                        <p>30 HRTV Corp. Bldg. Bolton Street  Brgy.3  Davao City</p>
+	                    </div>
+	                </div>
+                    <div class="form-group text-right">
+                      <button type="button"  class="btn btn-default"  name="btnCancel">Cancel </button>
+                      <button type="button"  class="btn btn-warning"  name="btnPrint">Print Details <span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+                    </div>
+	              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--DAVAOENA Modal-->
+    <div id="davaoenaModal" class="modal fade">
+      <div class="modal-dialog" style="align: center; padding-top: 10%;">
+        <div class="modal-content" style="width: 90%;">
+          <div class="modal-header" style="padding-bottom: 0px;">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="color: #4169E1;"> DAVAOENA PAWNSHOP</h4>
+              <h5> - Masterlist of outlets for your reference </h5>
+          </div>
+          <div class="modal-body">
+            <div class="contentpanel" style="padding: 0px;"> 
+            	<form name="frmDavaoena" action="<?php echo BASE_URL() ?>ecash_payout/printdetails" method="post" class="frmclass">
+		          <div class="panel panel-default" style="padding: 0px;">
+		            <div style='overflow:auto; width:500px;height:150px;'>
+		                <div class="form-group">
+		                    <p>1. MAMAY ROAD, LANANG DAVAO CITY</p>
+							<p>2. QUINONEZ CORNER APOLLO ST. BUHANGIN DAVAO CITY</p>
+							<p>3. KM. 12 PANACAN DAVAO CITY</p>
+		                </div>
+		            </div>
+	                <div class="form-group text-right">
+	                  <button type="button"  class="btn btn-default"  name="btnCancel">Cancel </button>
+	                  <button type="button"  class="btn btn-warning"  name="btnPrint">Print Details <span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+	                </div>
+		          </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--GEMCRAFT Modal-->
+    <div id="gemcraftModal" class="modal fade">
+      <div class="modal-dialog" style="align: center; padding-top: 10%;">
+        <div class="modal-content" style="width: 90%;">
+          <div class="modal-header" style="padding-bottom: 0px;">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="color: #4169E1;"> GEMCRAFT PAWNSHOP</h4>
+              <h5> - Masterlist of outlets for your reference </h5>
+          </div>
+          <div class="modal-body">
+            <div class="contentpanel" style="padding: 0px;"> 
+	            <form name="frmGemcraft" action="<?php echo BASE_URL() ?>ecash_payout/printdetails" method="post" class="frmclass">
+		            <div class="panel panel-default" style="padding: 0px;">
+		                <div style='overflow:auto; width:500px;height:150px;'>
+		                    <div class="form-group">
+		                        <p>1. ZAPOTE, BACOOR, CAVITE</p>
+								<p>2. BINAKAYAN, KAWIT, CAVITE</p>
+								<p>3. IMUS PUBLIC MARKET, IMUS, CAVITE</p>
+								<p>4. AGUINALDO HI-WAY, PANAPAAN 4, BACOOR, CAVITE</p>
+		                    </div>
+		                </div>
+	                    <div class="form-group text-right">
+	                      <button type="button"  class="btn btn-default"  name="btnCancel">Cancel </button>
+	                      <button type="button"  class="btn btn-warning"  name="btnPrint">Print Details <span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+	                    </div>
+		            </div>
+	            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--KWARTAGRAM Modal-->
+    <div id="kwartagramModal" class="modal fade">
+      <div class="modal-dialog" style="align: center; padding-top: 10%;">
+        <div class="modal-content" style="width: 90%;">
+          <div class="modal-header" style="padding-bottom: 0px;">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" style="color: #4169E1;"> KWARTAGRAM PAWNSHOP</h4>
+              <h5> - Masterlist of outlets for your reference </h5>
+          </div>
+          <div class="modal-body">
+            <div class="contentpanel" style="padding: 0px;"> 
+              <form name="frmKwartagram" action="<?php echo BASE_URL() ?>ecash_payout/printdetails" method="post" class="frmclass">
+	              <div class="panel panel-default" style="padding: 0px;">
+	                <div style='overflow:auto; width:500px;height:300px;'>
+	                    <div class="form-group">
+		                	<p>1.	P. VILLEGAS ST. NATIONAL HIGHWAY</p>
+							<p>2.	121-B ARTTRADE BLDG. LAPU-LAPU ST. BRGY. AGDAO DAV</p>
+							<p>3.	AGLAYAN MALAYBALAY CITY</p>
+							<p>4.	AGOO, LA UNION</p>
+							<p>5.	ALABANG400</p>
+							<p>6.	DEMA-ALA COMPOUND MAGSAYSAY ST.POBLACION ALABEL, S</p>
+							<p>7.	ANTIPOLO</p>
+							<p>8.	POBLACION, ARGAO CEBU</p>
+							<p>9.	AURORA, ZAMBOANGA DE</p>
+							<p>10.	NEW CITY HUB TIRONA HIGHWAY HABAY 1 BACOOR CAVITE</p>
+							<p>11.	BAGO CITY NEGROS OCCIDENTAL</p>
+							<p>12.	BAGONG SILANG CALOOCAN CITY</p>
+							<p>13.	BAGUIO CITY, BENGUET</p>
+							<p>14.	BAIS NEGROS OCCIDENTAL</p>
+							<p>15.	BULACAN</p>
+							<p>16.	BALANGA BATAAN</p>
+							<p>17.	4399 MCARTHUR HIGHWAY BALIBAGO, ANGELES</p>
+							<p>18.	BALINGASAG</p>
+							<p>19.	772 BS AQUINO AVE POBLACION, BALIUAG, BULACAN</p>
+							<p>20.	BANILAD</p>
+							<p>21.	BARRA, OPOL MISAMIS ORIENTAL</p>
+							<p>22.	BATAC</p>
+							<p>23.	BATANGAS CITY, BATANGAS</p>
+							<p>24.	CENTRAL WEST BAUANG LA UNION</p>
+							<p>25.	STALL #4 MAGTAAN BLDG M.H. DEL PILAR</p>
+							<p>26.	BAYAWAN NEGROS OCCIDENTAL</p>
+							<p>27.	LIBRES ST. BAYUGAN CITY AGUSAN DEL</p>
+							<p>28.	BOCAUE BULACAN</p>
+							<p>29.	BOGO CITY CEBU</p>
+							<p>30.	BORONGAN SAMAR</p>
+							<p>31.	BRGY.2 BUENAVISTA,AGUSAN DEL NORTE</p>
+							<p>32.	BUGO CAGAYAN DE ORO MISAMIS ORIENTAL</p>
+							<p>33.	KM 6, DRN BUILDING BUHANGIN, DAVAO CITY</p>
+							<p>34.	BUTUAN CITY AGUSAN DEL NORTE</p>
+							<p>35.	BUTUAN CITY</p>
+							<p>36.	CABANATUAN, NUEVA ECIJA</p>
+							<p>37.	CABANATUAN CITY NUEVA ECIJA</p>
+							<p>38.	CABIAO NE</p>
+							<p>39.	LAGUNA</p>
+							<p>40.	CADIZ CITY NEG</p>
+							<p>41.	LAGUNA</p>
+							<p>42.	D'BAN CALAMBA, MISAMIS OCCIDENTAL</p>
+							<p>43.	CALASIAO PANGASINAN</p>
+							<p>44.	CALBAYOG WESTERN SAMAR</p>
+							<p>45.	CALINAN DAVAO</p>
+							<p>46.	CAMIGUIN MAMBAJ</p>
+							<p>47.	CANDELARIA QUEZON</p>
+							<p>48.	CENTRAL LUZON</p>
+							<p>49.	CAPAS TARLAC</p>
+							<p>50.	CAPITOL UNIVERSITY CAGAYAN DE ORO CITY</p>
+							<p>51.	MINDANAO</p>
+							<p>52.	CATBALOGAN SAMAR</p>
+							<p>53.	C.M. RECTO DAVAO CITY DAVAO DEL SUR</p>
+							<p>54.	SUNIEL ST. CAGAYAN DE ORO</p>
+							<p>55.	POB CONCEPCION TARLAC</p>
+							<p>56.	CONSOLACION CEBU</p>
+							<p>57.	DAGUPAN</p>
+							<p>58.	DAPITAN CITY ZAMBOANGA DEL NORTE</p>
+							<p>59.	CAVITE</p>
+							<p>60.	MINDANAO</p>
+							<p>61.	ESTRADA STREET, ZONE 2 DIGOS CITY DAVAO</p>
+							<p>62.	DINALUPIHAN, BATAAN</p>
+							<p>63.	DIPOLOG CITY ZAMBOANGA DEL NORTE</p>
+							<p>64.	DUMAGUETE CITY NEGROS ORIENTAL</p>
+							<p>65.	DUMAGUETE CITY</p>
+							<p>66.	MEADOWS FOODMART BLDG. II, LOT 14 BLK. 14 FAIRVIEW</p>
+							<p>67.	CUBAO, QUEZON CITY EDSA</p>
+							<p>68.	UNIT G7 PADRE FAURA CENTER, PADRE FAURA COR. MH DE</p>
+							<p>69.	PRK. JASMINE, NORTH AVE.,BRGY.BALINTAWAK, ESCALANT</p>
+							<p>70.	GAPAN NUEVA ECIJA</p>
+							<p>71.	CAGAMPANG EXT. GENERAL SANTOS CITY SOU</p>
+							<p>72.	123 GUEVARRA BLG. PIONEER AVE. GENERAL SANTOS CITY</p>
+							<p>73.	GERONA TARLAC</p>
+							<p>74.	QUEZON CITY</p>
+							<p>75.	GUAGUA PAMPANGA</p>
+							<p>76.	SARMIENTO ST. STO. CRISTO, GUIMBA,N.E.</p>
+							<p>77.	NEGRO OCCIDENTAL</p>
+							<p>78.	SAN MIGUEL TARLAC</p>
+							<p>79.	16/F PRYCE CENTER 1179 DON CHINO ROCES</p>
+							<p>80.	#11 JOANA MARIE LUCMAN BLDG., TORRALBA</p>
+							<p>81.	IMUS CAVITE</p>
+							<p>82.	LOOC JAGNA BOHOL</p>
+							<p>83.	JARO ILOILO CITY</p>
+							<p>84.	IZNART ST. ILOILO CITY</p>
+							<p>85.	J.P. LAUREL DAVAO CITY DAVAO DEL SUR</p>
+							<p>86.	KALENTONG MANDALUYONG</p>
+							<p>87.	KIDAPAWAN CITY NORTH COTABATOM</p>
+							<p>88.	COR. YUNQUE-GURREA STREET, LA CARLOTA</p>
+							<p>89.	LAHUG CEBU</p>
+							<p>90.	LAOAG</p>
+							<p>91.	LAPASAN CAGAYAN DE ORO MISAMIS ORIENT</p>
+							<p>92.	ALABANG ZAPOTE RD. LAS PINAS CITY</p>
+							<p>93.	B-105 IGOROT CENTRUM, KM 4</p>
+							<p>94.	LEGASPI CITY ALBAY</p>
+							<p>95.	LICEO</p>
+							<p>96.	CEBU</p>
+							<p>97.	LIMMANS BACOLOD CITY NEGROS OCCIDENTAL</p>
+							<p>98.	LIPA CITY BATANGAS</p>
+							<p>99.	LOPUES EAST BACOLOD CITY NEGROS OCCIDE</p>
+							<p>100.	LOS BANOS LAGUNA</p>
+							<p>101.	LUCENA CITY QUE</p>
+							<p>102.	LEYTE</p>
+							<p>103.	MABOLO CEBU CITY CEBU</p>
+							<p>104.	MALAYBALAY</p>
+							<p>105.	MALOLOS BULACAN</p>
+							<p>106.	HWAY GUIZO, INFRONT RAPIDE, MANDAUE CITY CEBU</p>
+							<p>107.	MANGALDAN, PANGASINAN</p>
+							<p>108.	MARAMAG, BUKIDNON</p>
+							<p>109.	AMANDA BUILDING,FLOREZ ST, MARANDING</p>
+							<p>110.	MARIKINA CITY</p>
+							<p>111.	#73 SSH ARCADE MAC ARTHUR HIGH WAY MATINA DAVAO C</p>
+							<p>112.	G/F 351 A.MABINI ST. CALOOCAN CITY</p>
+							<p>113.	IBO LAPU LAPU CITY CEBU</p>
+							<p>114.	MEPZ2</p>
+							<p>115.	MEYCAUAYAN BULACAN</p>
+							<p>116.	MIDSAYAP NORTH COTABATO</p>
+							<p>117.	BONIFACIO ST. OZAMIS CITY MISAMIS OCCIDENTAL</p>
+							<p>118.	MOLAVE ZAMBOANGA DEL SUR</p>
+							<p>119.	BLK 4 LOT 7 VILLA MARIA SUBD BACOOR CAVITE</p>
+							<p>120.	MONTALBAN RIZAL</p>
+							<p>120.	MONTALBAN RIZAL</p>
+							<p>120.	MONTALBAN RIZAL</p>
+							<p>120.	MONTALBAN RIZAL</p>
+							<p>120.	MONTALBAN RIZAL</p>
+							<p>121.	TIBANGA ILIGAN CITY, ILIGA</p>				
+							<p>122.	SCIENCE CITY OF MUNOZ NUEVA ECIJA,MUNOZ</p>				
+							<p>123.	ALABANG ROTONDA</p>				
+							<p>124.	MURPHY CUBAO</p>				
+							<p>125.	NOVALICHES QUEZON CITY</p>				
+							<p>126.	OLONGAPO CITY</p>				
+							<p>127.	OLONGAPO</p>				
+							<p>128.	OPON LAPU-LAPU CITY CEBU</p>				
+							<p>129.	ORANI BATAAN</p>				
+							<p>130.	REAL ST. ORMOC LEYTE</p>				
+							<p>131.	AVILES ST. ORMOC LEYTE</p>				
+							<p>132.	OROQUIETA MISAMIS OCCIDENTAL</p>				
+							<p>133.	OSMENA CEBU</p>				
+							<p>134.	RIZAL AVE. OZAMIS CITY MISAMIS OCCIDEN</p>				
+							<p>135.	DON CARLOS BUKIDNON</p>				
+							<p>136.	PULMONES ST., SANTIAGO DIST.</p>				

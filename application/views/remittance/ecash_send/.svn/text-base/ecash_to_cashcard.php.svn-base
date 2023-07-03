@@ -1,0 +1,117 @@
+<div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>ECASH</li>
+                                </ul>
+                                <h4>E-Cash To Cashcard</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel" style="padding-bottom: 0px;">
+                    <?php if ($result['S'] === 0): ?>
+                        <div class="alert alert-danger"><?php echo $result['M']; ?></div>
+                    <?php endif ?>
+                    <?php if ($result['S'] == 1): ?>
+                        <div class="alert alert-success"><?php echo $result['M']; ?></div>
+                    <?php endif ?>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-5">                                 
+                                        <h5 style="font-weight: bold; color: #4169E1;">SENDER</h5> 
+                                        <div class="form-group">
+                                           <input type="text" class="form-control" name="inputFullname" placeholder="FULLNAME" value="<?php echo $user['U']?>" readonly/>
+                                        </div>
+                                        <div class="form-group">
+                                           <input type="text" class="form-control" name="inputAddressLine1" placeholder="ADDRESS LINE 1"  value="<?php echo $user['AD']?>" readonly/>
+                                        </div>
+                                        <div class="form-group">
+                                           <input type="text" class="form-control" name="inputAddressLine2" placeholder="ADDRESS LINE 2" readonly/>
+                                        </div>
+                                        <h5 style="font-weight: bold; color: #4169E1;">BENEFICARY</h5> 
+                                        <div class="form-group">
+                                           <form name="frmecashtocashcard" action="<?php echo BASE_URL() ?>ecash_send/ecashtocashcard" method="post" id="frmecashtocashcard"  >
+                                              <div class="row">
+                                                  <div class='col-xs-12 col-md-12'>
+                                                      <div class="row">
+                                                         <div class="col-md-10">
+                                                              <input type="text" class="form-control" id="inputBenificiary" name="inputSearch" placeholder="SEARCH BENEFICIARY NAME" required />
+                                                     
+                                                         </div>
+                                                         <div class="col-md-2">
+                                                               <button type="submit" name= "btnBsearch" id="btnBsearch" class="btn btn-primary">
+                                                               <span id="spanBIcon" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                                              </button>
+                                                         </div> 
+                                                      </div> 
+                                                  </div>
+                                               </div> 
+                                         </form>  
+                                        </div> 
+                                        
+                                        <h5 style="font-weight: bold;">TRANSACTION DETAILS</h5>
+                                            <form name="frmecashtocashcard" action="<?php echo BASE_URL() ?>ecash_send/ecashtocashcard" method="post" id="frmecashtocashcardconfirm"  >
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" id="inputData" name="inputData" readonly/>
+                                           <input type="text" class="form-control" name="inputAmount" id="inputAmount" placeholder="AMOUNT" readonly />
+                                        </div>
+                                        <div class="form-group">
+                                              <input type="password" class="form-control" id="inputTpass" name="inputTpass" readonly />
+                                        </div>
+                                        <div class="form-group text-right">
+                                          <button type="submit" class="btn btn-primary"  name="btnSubmit">Submit</button>
+                                        </div>
+                                        </form>
+                                   
+
+                                </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-12">
+                              <?php if ($row['S']===0): ?>
+                                  <div class="alert alert-danger"><b><?php echo $row['M']; ?>!!</b></div>
+                              <?php endif ?>
+                              <?php if ($row['S']==1): ?>
+                        
+                              <hr />
+                              <h4>Result(s) :</h4>
+                              <table id="example"  class="table table-bordered" cellspacing="0" style="width:100%;">
+                                        <thead>
+                                          <tr>
+                                            <th>Fullname</th>
+                                            <th>Account No</th>
+                                            <th>Action</th>
+                                            <th style="display:none"></th>
+                                            <th style="display:none"></th>
+                                            <th style="display:none"></th>
+                                          </tr>
+                                        </thead>
+
+                                        <tbody>
+                                          <?php  foreach ($row['R_DATA'] as $i): ?>
+                                          <tr class="tr">
+                                              <td class="td"><?php echo $i['DN']; ?></td>
+                                              <td class="td"><?php echo $i['AN']; ?></td>
+                                              <td class="td" style="display:none"><?php echo $i['FN']; ?></td>
+                                              <td class="td" style="display:none"><?php echo $i['MN']; ?></td>
+                                              <td class="td" style="display:none"><?php echo $i['LN']; ?></td>
+                                              <td><a id="cashcard" class="btn btn-danger" href="#">Select</a></td>
+                                          </tr>
+                                          <?php endforeach ?>
+                                      
+                                        </tbody>
+                                    </table>
+                                     
+                                <?php endif ?>
+                            </div>
+                          </div>
+                        </div>  
+                    </div>  
+           </div>          
+  </div>

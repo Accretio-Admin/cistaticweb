@@ -1,0 +1,116 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>REPORT</li>
+                                </ul>
+                                <h4>GENERAL REPORT</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel">
+
+                      <?php if ($API['S'] === 0): ?>
+                        <div class="alert alert-danger"><?php echo $API['M']; ?></div> 
+                      <?php endif ?>
+                     <form method="post" method="<?php echo BASE_URL()?>Report/general_report" id="frmreport">
+                          <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="col-xs-12 col-md-3">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-3">
+                                                <b>START &nbsp;&nbsp;&nbsp;&nbsp;</b>
+                                            </div>
+                                            <div class="col-xs-12 col-md-9">
+                                                <input type="text" class="form-control" name="inputStart" id="datetimepicker" value="<?php echo $INPUT['inputStart'] ?>" readonly  />
+                                            </div>
+                                        </div>
+                                         
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-3">
+                                      <div class="form-group">
+                                       <div class="row">
+                                            <div class="col-xs-12 col-md-2">
+                                                <b>END</b>
+                                            </div>
+                                            <div class="col-xs-12 col-md-10">
+                                                <input type="text" class="form-control" name="inputEnd" id="datetimepicker"  value="<?php echo $INPUT['inputEnd'] ?>" readonly />
+                                            </div>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4">
+                                   <div class="form-group">
+                                      <button type="submit" name="btnSearch" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i>&nbsp;SEARCH</button>
+                                      <a href="<?php echo BASE_URL(); ?>Report/export/<?php echo md5('general_report') ?>" target="_blank">
+                                      <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i>&nbsp;&nbsp;GENERATE</button>
+                                      </a>
+
+                                    </div>
+                                </div>
+                            </div>    
+                          </div>
+                       
+
+                           <?php if ($process['P'] == 1 && $process['S'] ==1): ?>
+                              <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="text-right" style="margin-bottom:5px">
+                                        <span class="badge badge-primary"><?php echo $API['M']; ?></span>
+                                    </div>
+                                        <div  class="col-md-12 col-xs-12" style="overflow-y:scroll;height:350px" >
+                                             <table  class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="150">Sequence #</th>
+                                                            <th  width="250">Transaction #</th>
+                                                            <th  width="250">Transaction Type</th>
+                                                            <th  width="150">Amount</th>
+                                                            <th  width="150">Charge</th>
+                                                            <th  width="150">Income</th>
+                                                            <th  width="150">Balance Before</th>
+                                                            <th  width="150">Balance After</th>
+                                                            <th  width="130">Date</th> 
+                                                           
+                                                        </tr>
+                                                    </thead>
+                                                        <tbody>
+                                                   
+                                                               <?php foreach ($API['TDATA'] as $A ): ?>
+                                                                    <tr>
+                                                                        <td  width="155"><?php echo $A['SN'];?></td>
+                                                                        <td  width="180"><?php echo $A['TN'];?></td>
+                                                                        <td  width="250"><?php echo $A['TP'];?></td>
+                                                                        <td  width="150"><?php echo $A['A'];?></td>
+                                                                        <td  width="150"><?php echo $A['C'];?></td>
+                                                                        <td  width="150"><?php echo $A['IC'];?></td>
+                                                                        <td  width="150"><?php echo $A['BB'];?></td>
+                                                                        <td  width="150"><?php echo $A['BA'];?></td>
+                                                                        <td  width="150"><?php echo $A['D'];?></td>
+                                                                       
+                                                                      </tr>
+                                                                <?php endforeach ?>
+                                                            </tbody>
+                                                            </table>
+                                                        </div>
+                                                
+                                            
+                                     
+                                 
+                              </div>
+
+
+                            </div>
+                          <?php endif ?>
+                      </form>
+
+                    </div><!-- contentpanel -->
+                    
+                </div><!-- mainpanel -->            

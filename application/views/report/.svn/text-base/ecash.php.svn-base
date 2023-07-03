@@ -1,0 +1,116 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>REPORT</li>
+                                </ul>
+                                <h4>E-CASH REPORT</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel">
+
+                     <form method="post" method="<?php echo BASE_URL()?>Report/ecash" id="frmreport">
+                          <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <div class="col-xs-12 col-md-4">
+                                <div class="form-group">
+                                     <select class="form-control" name="selEcash">
+                                            <option value="" disabled selected>SELECT E-CASH</option>
+                                            <option value="1">E-CASH TO E-CASH</option>
+                                            <option value="2">SMARTMONEY (SEND)</option>
+                                            <option value="0">E-CASH TO GPRS OUTLET</option>
+                                            <option value="3">E-CASH CREDIT TO BANK</option>
+                                      </select>  
+                                </div>
+                                       
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-4 text-right">
+                                   <div class="form-group">
+                                      <button type="submit" name="btnSearch" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i>&nbsp;SEARCH</button>
+                                       <a href="<?php echo BASE_URL(); ?>Report/export/<?php echo md5('ecash') ?>" target="_blank">
+                                       <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i>&nbsp;&nbsp;GENERATE</button>
+                                      </a>
+                                    </div>
+                                </div>
+                            </div>    
+                          </div>
+                          <?php if ($process['P'] == 1 && $process['S'] ===0): ?>
+                              <div class="row">
+                                <div class="col-xs-10 col-md-10">
+                                  <div class="alert alert-danger"><b><?php echo $process['M']; ?></b></div>
+                                </div>   
+                              </div>
+                          <?php endif ?>
+
+                           <?php if ($process['P'] == 1 && $process['S'] ==1): ?>
+                              <div class="row">
+                                <div class="col-xs-12 col-md-12">
+                                    <div class="text-right" style="margin-bottom:5px">
+                                        <span class="badge badge-danger"><?php echo $process['M']; ?></span>
+                                    </div>
+                                      <div  class="col-md-12 col-xs-12" style="overflow-y:scroll;height:350px;overflow-x:auto" >
+                                           <table class="table table-bordered" style="width:auto;">
+                                                  <thead>
+                                                      <tr>
+                                                          <?php foreach ($field as $f ): ?>
+                                                                 <th width="150"><?php echo $f;?></th>
+                                                          <?php endforeach ?>
+                                                         
+                                                      </tr>
+                                                  </thead> 
+                                                  <tbody>
+                                                    <?php if ($TBODY == 2): ?>
+                                                      
+                                                   
+                                                      <?php foreach ($API['TDATA'] as $r): ?>
+                                                         <tr>
+                                                              <td><a href="<?php echo $r['URL']?>" target="_blank"><?php echo $r['trackingno'];?></a></td>
+                                                              <td><?php echo $r['accountname'];?></td>
+                                                              <td><?php echo $r['transtype'];?></td>
+                                                              <td><?php echo $r['amount'];?></td>
+                                                              <td><?php echo $r['charge'];?></td>
+                                                              <td><?php echo $r['totalamount'];?></td>
+                                                              <td><?php echo $r['postingdate'];?></td>
+                                                           
+                                                         </tr>
+                                                      <?php endforeach ?>
+                                                       <?php endif ?>
+                                                       <?php if ($TBODY == 1): ?>
+                                                        
+                                                         <?php foreach ($API['TDATA'] as $r): ?>
+                                                          <tr>
+                                                              <td><a href="<?php echo $r['URL']?>" target="_blank"><?php echo $r['trackingno'];?></a></td>
+                                                              <td><?php echo $r['regcode'];?></td>
+                                                              <td><?php echo $r['sender_name'];?></td>
+                                                              <td><?php echo $r['sender_id'];?></td>
+                                                              <td><?php echo $r['sender_address'];?></td>
+                                                              <td><?php echo $r['sender_email'];?></td>
+                                                              <td><?php echo $r['sender_mobile'];?></td>
+                                                              <td><?php echo $r['bene_name'];?></td>
+                                                              <td><?php echo $r['bene_id'];?></td>
+                                                              <td><?php echo $r['bene_address'];?></td>
+                                                              <td><?php echo $r['bene_email'];?></td>
+                                                              <td><?php echo $r['bene_mobile'];?></td>
+                                                              <td><?php echo $r['total'];?></td>
+                                                              <td><?php echo $r['datecreated'];?></td>
+                                                         </tr>   
+                                                         <?php endforeach ?>
+                                                       <?php endif ?>
+                                                  </tbody>  
+                                            </table>
+                                      </div>
+                                </div>   
+                              </div>
+                          <?php endif ?>
+                      </form>
+
+                    </div><!-- contentpanel -->
+                    
+                </div><!-- mainpanel -->            

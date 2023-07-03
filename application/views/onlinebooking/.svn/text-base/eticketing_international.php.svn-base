@@ -1,0 +1,44 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>ONLINE BOOKING</li>
+                </ul>
+                <h4>INTERNATIONAL FLIGHTS</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-bottom: 0px;">
+        <div class="row row-stat">
+            <div class="col-xs-12 col-md-12">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                  <div class="panel panel-default">
+                    <div class="panel-heading" style="padding-top: 15px; padding-bottom: 0px; color: #4169E1; font-weight: bold;">E-TICKETING LOGS</div>
+                      <div class="panel-body">
+                        <div class="row">
+                          <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                  <?php foreach ($field as $f): ?>
+                                      <th><?php echo $f?></th>
+                                  <?php endforeach ?>
+                                </tr>
+                            </thead>
+                            <tbody>
+                          
+                            </tbody>
+                          </table>
+                        </div>
+                   </div>
+              </div>   
+            </div>
+        </div>
+    </div>
+
+</div>

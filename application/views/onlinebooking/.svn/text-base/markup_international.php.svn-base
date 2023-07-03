@@ -1,0 +1,39 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>ONLINE BOOKING</li>
+                </ul>
+                <h4>INTERNATIONAL FLIGHTS</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-bottom: 0px;">
+        <div class="row row-stat">
+            <div class="col-md-5">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                  <div class="panel panel-default">
+                    <div class="panel-heading" style="padding-top: 15px; padding-bottom: 0px; color: #4169E1; font-weight: bold;">MARKUP</div>
+                      <div class="panel-body">
+                        <form name="frminternationalmarkup" action="<?php echo BASE_URL() ?>International_flights/markup_international" method="post" >
+                             <div class="form-group">
+                               <input type="text" class="form-control" name="inputAmount" placeholder="AMOUNT" required/>
+                            </div>
+                             <div class="form-group text-right">
+                                <button type="submit" class="btn btn-primary"  name="btnSubmit">Submit</button>
+                            </div>
+                        </form>
+                      </div>
+                   </div>
+              </div>   
+            </div>
+        </div>
+    </div>
+
+</div>

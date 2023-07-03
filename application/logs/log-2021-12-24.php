@@ -1,0 +1,55 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-12-24 02:25:15 --> 404 Page Not Found: Stylecss/index
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2021-12-24 02:25:15 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:25:15 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:25:15 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:25:27 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:25:27 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:25:27 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:26:34 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:28:19 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:28:20 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:30:42 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:30:42 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:30:43 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:18 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:32:18 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:18 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:30 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:32:30 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:30 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:55 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:32:55 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:32:55 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:32:55 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:34:09 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:34:09 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:34:09 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:34:09 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:34:21 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:34:21 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:34:21 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 02:34:21 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 02:58:58 --> 404 Page Not Found: Assets/login_new
+ERROR - 2021-12-24 02:59:07 --> 404 Page Not Found: Assets/login_new
+ERROR - 2021-12-24 03:00:07 --> 404 Page Not Found: Assets/assets
+ERROR - 2021-12-24 03:00:08 --> 404 Page Not Found: Assets/assets
+ERROR - 2021-12-24 03:00:44 --> 404 Page Not Found: Assets/assets
+ERROR - 2021-12-24 03:01:15 --> 404 Page Not Found: Assets/assets
+ERROR - 2021-12-24 03:01:15 --> 404 Page Not Found: Assets/assets
+ERROR - 2021-12-24 03:07:46 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:07:46 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 03:07:47 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:07:47 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 03:07:49 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:07:49 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 03:07:49 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:07:49 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 03:30:23 --> 404 Page Not Found: Assets/login_new
+ERROR - 2021-12-24 03:30:37 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:30:37 --> 404 Page Not Found: Indexjs/index
+ERROR - 2021-12-24 03:30:38 --> 404 Page Not Found: Stylecss/index
+ERROR - 2021-12-24 03:30:38 --> 404 Page Not Found: Indexjs/index

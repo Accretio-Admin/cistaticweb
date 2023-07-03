@@ -1,0 +1,184 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>NETWORK</li>
+                </ul>
+                <h4>MY INDIRECT REFERRALS</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-bottom: 0px;">
+        <div class="row row-stat">
+            <div class="col-md-9">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#summary"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Summary</a></li>
+                    <li><a data-toggle="tab" href="#weeklyincome"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Weekly Income</a></li>
+                    <li><a data-toggle="tab" href="#payouthistory"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Payout History</a></li>
+                    <li><a data-toggle="tab" href="#rightdl"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> Right Downlines</a></li>
+                    <li><a data-toggle="tab" href="#leftdl"><span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span> Left Downlines</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content" style="padding: 0px;">
+            <div id="summary" class="tab-pane fade in active">
+                <h3>Summary</h3>
+                <div class="contentpanel">
+                    <div class="row row-stat">
+                        <div class="col-md-5">
+	                        <table class="table table-striped">
+	                        	<thead>
+                                    <tr>
+                                        <th colspan="3" style="text-align: center;">ACCUMULATED</th>
+                                        <th></th>
+                                        <th colspan="3" style="text-align: center;" nowrap>VARIABLES</th>
+	                                </tr>
+	                        	</thead>
+	                        	<tbody>
+	                        		<tr>
+	                        			<td>TOTAL RIGHT</td><td>:</td><td><?php echo $summary[0]['rpoints'] ?></td>
+	                        			<td></td>
+	                        			<td>WAITING RIGHT</td><td>:</td><td><?php echo $summary[0]['waiting_right'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL LEFT</td><td>:</td><td><?php echo $summary[0]['lpoints'] ?></td>
+	                        			<td></td>
+	                        			<td>WAITING LEFT</td><td>:</td><td><?php echo $summary[0]['waiting_left'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL GC</td><td>:</td><td><?php echo $summary[0]['gc'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT RIGHT</td><td>:</td><td><?php echo $summary[0]['current_right_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL PAIRING</td><td>:</td><td><?php echo $summary[0]['ms'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT LEFT</td><td>:</td><td><?php echo $summary[0]['current_left_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL DIRECT</td><td>:</td><td><?php echo $summary[0]['dr'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT GC</td><td>:</td><td><?php echo $summary[0]['current_gc_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL INDIRECT</td><td>:</td><td><?php echo $summary[0]['ind'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT PAIRING</td><td>:</td><td><?php echo $summary[0]['current_ms_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL FLUSHOUT-RIGHT</td><td>:</td><td><?php echo $summary[0]['rfpoints'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT DIRECT</td><td>:</td><td><?php echo $summary[0]['current_dr_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL FLUSHOUT-LEFT</td><td>:</td><td><?php echo $summary[0]['lfpoints'] ?></td>
+	                        			<td></td>
+	                        			<td>CURRENT INDIRECT</td><td>:</td><td><?php echo $summary[0]['current_ind_points'] ?></td>
+	                        		</tr>
+	                        		<tr>
+	                        			<td>TOTAL INCOME</td><td>:</td><td><?php echo $summary[0]['total'] ?></td>
+	                        		</tr>
+	                        	</tbody>
+	                        	<tfooter>
+	                        		<tr>
+	                        			<td>PAYOUT</td><td>:</td><td><?php echo $summary[0]['payout'] ?></td>
+	                        		</tr>
+	                        	</tfooter>
+	                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="weeklyincome" class="tab-pane fade">
+                <h3>Weekly Income</h3>
+                <div class="contentpanel">
+                    <div class="row row-stat">
+                        <div class="col-md-5">
+							<div class="form-group">
+								<label style="font-weight: bold;">Results</label>
+							</div>
+							<div class="form-group">
+								<label>Sorry, no record(s) found from the database.</label>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="payouthistory" class="tab-pane fade">
+                <h3>Payout History</h3>
+                <div class="contentpanel">
+                    <div class="row row-stat">
+                        <div class="col-md-8">
+				              <table class="table table-striped">
+				                <thead>
+				                  <tr>
+				                      <th style="text-align: center">Converted To</th>
+				                      <th style="text-align: center">Original Amount</th>
+				                      <th style="text-align: center">Amount Converted</th>
+				                      <th style="text-align: center">Balance Before</th>
+				                      <th style="text-align: center">Balance After</th>
+				                      <th style="text-align: center">Ecash Balance Before</th>
+				                      <th style="text-align: center">Ecash Balance After</th>
+				                      <th style="text-align: center">Date</th>
+				                      <th style="text-align: center">Time</th>
+				                  </tr>
+				                </thead>
+				                <tbody>
+				                  <tr>
+				                    <td colspan="8" style="font-weight: bold; text-align: center;">NO DATA AVAILABLE!</td>
+				                  </tr>
+				                </tbody>
+				              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightdl" class="tab-pane fade">
+                <h3>Right Downlines</h3>
+                <div class="contentpanel">
+                    <div class="row row-stat">
+                        <div class="col-md-5">
+							<div class="form-group">
+								<label style="font-weight: bold;">Results</label>
+							</div>
+							<div class="form-group">
+								<label>Sorry, no record(s) found from the database.</label>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="leftdl" class="tab-pane fade">
+                <h3>Left Downlines</h3>
+                <div class="contentpanel">
+                    <div class="row row-stat">
+                        <div class="col-md-5">
+							<div class="form-group">
+								<label style="font-weight: bold;">Results</label>
+							</div>
+							<div class="form-group">
+								<label>Sorry, no record(s) found from the database.</label>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

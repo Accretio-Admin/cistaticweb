@@ -1,0 +1,90 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-mobile-phone"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                   <li>LOADING</li>
+                                </ul>
+                                <h4>ETISALAT</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+
+                    
+                    <div class="contentpanel">
+                    <?php if ($API['S'] === "0"): ?>
+                        <div class="alert alert-danger"><?php echo $API['M']; ?></div>
+                    <?php endif ?>
+                    <?php if ($API['S'] == 1): ?>
+                        <div class="alert alert-info">Are you sure you want to confirm ?</div>
+                    <?php endif ?>
+                   <?php if ($result['S'] === 0): ?>
+                        <div class="alert alert-danger"><?php echo $result['M']; ?></div>
+                    <?php endif ?>
+                    <?php if ($result['S'] == 1): ?>
+                        <div class="alert alert-success"><?php echo $result['M']; ?></div>
+                    <?php endif ?>
+
+                          <div class="row">
+                             
+                              <div class="col-xs-12  col-md-5">
+                               <?php if ($API['S'] == "" || $API['S'] === "0"): ?>
+                                <div class="row">
+                                    <div class='col-xs-12 col-md-12'>
+
+                                          <form name="frmetisalatloading" action="<?php echo BASE_URL()?>international_loading/etisalat" method="post" id="frmetisalatloading">
+                                                <div class="form-group" >
+                                                  <select class="form-control" name="selProd" id="selProd" required>
+                                                      <option value="" disabled selected>SELECT PRODUCT</option>
+                                                      <option value="1">ETSWDL</option>
+    
+                                                  </select>
+                                                 <br />
+                                                  <input type="text" class="form-control" name="inputRMobile" placeholder="MOBILE NO" required/>
+                                                </div>
+
+                                              <div class="form-group">
+                                                 <input type="text" class="form-control" name="inputAmount" placeholder="AMOUNT" required/>
+                                              </div>
+                                            
+                                              <div class="form-group text-center">
+                                                  <h4>What is <?php echo $captcha['code1']  ?> + <?php echo $captcha['code2']  ?> ?</h4>
+                                              </div>
+                                              <div class="form-group">
+                                                 <input type="number" class="form-control" name="inputCaptcha" placeholder="CAPTCHA CODE" required/>
+                                              </div>
+                                               <div class="form-group text-right">
+                                                  <button type="submit" class="btn btn-primary"  name="btnSubmit">Submit</button>
+                                              </div>
+                                          </form>
+                                    </div> <!-- col-xs-12 col-md-8-->
+                                </div> <!-- row -->
+                               <?php endif ?>
+                               <?php if ($API['S'] == 1): ?>
+                                  <form name="frmetisalatloading" action="<?php echo BASE_URL()?>international_loading/etisalat" method="post" id="frmetisalatloading">
+                                                <div class="form-group" >
+                                                   <input type="text" class="form-control" name="inputRMobile" placeholder="MOBILE NO" value="<?php echo $input['mobile']; ?>" required/>
+                                                </div>
+                                              <div class="form-group">
+                                                 <input type="text" class="form-control" name="inputAmount" placeholder="AMOUNT" value="<?php echo $input['plancode']; ?>" required/>
+                                              </div>
+                                              <div class="form-group">
+                                                 <input type="text" class="form-control" name="inputAmount" placeholder="TRANSACTION PASSWORD" required/>
+                                              </div>
+                                               <div class="form-group text-right">
+                                                  <button type="submit" class="btn btn-primary"  name="btnConfirm">Submit</button>
+                                              </div>
+                                          </form>
+                               <?php endif ?>
+                              </div> <!--col-xs-6 col-md-6-->
+
+                  
+                        </div><!-- row -->
+                    </div><!-- contentpanel -->
+                    
+    </div><!-- mainpanel -->            

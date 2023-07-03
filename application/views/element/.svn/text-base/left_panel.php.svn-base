@@ -1,0 +1,122 @@
+            
+
+                <div class="leftpanel">
+                    <div class="media profile-left">
+                        <a class="pull-left profile-thumb" href="profile.html">
+                            <img class="img-circle" src="<?php echo BASE_URL()?>assets/images/photos/default_photo.png" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading"><?php echo $user['N'].$user['airtime_loading'];?></h4>
+                            <small class="text-muted"><?php echo $user['R'];?></small>
+                        </div>
+                    </div><!-- media -->
+                    
+                    <h5 class="leftpanel-title">Navigation</h5>
+                    <ul class="nav nav-pills nav-stacked">
+
+                    <?php echo  ($menu==1)?'<li  class="active">':'<li  class="">' ?>
+                            <a href="<?php echo BASE_URL() ?>main/">
+                                <i class="fa fa-home"></i> <span>Home</span>
+                            </a>
+                        </li>
+
+                        <!-- REMITTANCE -->
+                        <?php if ($user['A_CTRL']['remittance'] == 1): ?>
+                            <?php echo  ($parent=='REMITTANCE')?'<li  class="parent active">':'<li  class="parent">' ?>
+                            <a href="#"><i class="fa fa-money"></i> <span>Remittance</span></a>
+                                <ul class="children">
+                                     <?php echo  ($menu==2)?'<li  class="active">':'<li  class="">' ?>
+                                         <a href="<?php echo BASE_URL() ?>ecash_send/">E-Cash Send</a>
+                                     </li>
+                                     <?php echo  ($menu==3)?'<li  class="active">':'<li  class="">' ?>
+                                        <a href="<?php echo BASE_URL() ?>ecash_payout/">E-Cash Payout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php endif ?>
+                        <!-- REMITTANCE -->
+
+
+                        <!-- BILLSPAYMENT -->
+                        <?php if ($user['A_CTRL']['billspayment'] == 1): ?>
+                            <?php echo  ($menu==4)?'<li  class="active">':'<li  class="">' ?>
+                            <a href="<?php echo BASE_URL() ?>bills_payment/">
+                                <i class="fa fa-money"></i> <span>Bills Payment</span>
+                            </a>
+                        </li>
+                        <?php endif ?>
+                        <!-- BILLSPAYMENT -->
+
+
+                        <!-- LOADING -->
+                        <?php if ($user['A_CTRL']['airtime_loading'] == 1): ?>
+                            <?php echo  ($parent=='LOADING')?'<li  class="parent active">':'<li  class="parent">' ?>
+                                <a href="#"><i class="fa fa-mobile-phone"></i> <span>Loading</span></a>
+                                    <ul class="children">
+                                        <?php echo  ($menu==5)?'<li  class="active">':'<li  class="">' ?>
+                                         <a href="<?php echo BASE_URL() ?>e_loading/">E-Loading</a>
+                                        </li>
+                                         <?php echo  ($menu==6)?'<li  class="active">':'<li  class="">' ?>
+                                             <a href="<?php echo BASE_URL() ?>international_loading/">International</a>
+                                         </li>
+                                        <?php echo  ($menu==7)?'<li  class="active">':'<li  class="">' ?>
+                                         <a href="<?php echo BASE_URL() ?>Fundtransfer_loading/">Fund Transfer</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                          <?php endif ?>
+                        <!-- LOADING -->
+
+
+                        <!--ONLINE BOOKING -->
+                         <?php if ($user['A_CTRL']['online_booking'] == 1): ?>
+                            <?php echo  ($parent=='DOMESTIC_FLIGHTS')?'<li  class="parent active">':'<li  class="parent">' ?>
+                            <a href="#"><i class="fa fa-plane"></i> <span>Online Booking</span></a>
+                                <ul class="children">
+                                     <?php echo  ($menu==8)?'<li  class="active">':'<li  class="">' ?>
+                                         <a href="<?php echo BASE_URL() ?>Domestic_flights/">Domestic Flights</a>
+                                     </li>
+<!--                                <?php echo  ($menu==9)?'<li  class="active">':'<li  class="">' ?>
+                                         <a href="<?php echo BASE_URL() ?>International_flights/">International Flights</a>
+                                     </li>
+                                     <?php echo  ($menu==10)?'<li  class="active">':'<li  class="">' ?>
+                                      <a href="#">Hotel Reservation</a>
+                                     </li> -->
+                                </ul>
+                            </li>
+                        <?php endif ?>
+                        <!--ONLINE BOOKING-->
+                       
+
+                         <!-- ONLINE SHOP -->
+<!--                        <?php echo  ($menu==11)?'<li  class="active">':'<li class="">' ?>
+                            <a href="<?php echo BASE_URL() ?>Online_shop/">
+                               <i class="fa fa-shopping-cart"></i> <span>Online Shop</span>
+                            </a>
+                         </li> 
+ -->
+                        <!--ONLINE SHOP-->
+
+
+                        <!-- NETWORKING -->
+<!--                    <?php if ($user['A_CTRL']['networking'] == 1): ?>
+                            <?php echo  ($menu==13)?'<li class="active">':'<li class="">' ?>
+                         <a href="<?php echo BASE_URL() ?>Network/">
+                            <i class="fa fa-users"></i> <span>Network</span>
+                         </a>
+                         </li>
+                        <?php endif ?> 
+-->
+                        <!-- NETWORKING -->
+
+
+                        <!-- REPORTS -->
+                         <?php echo  ($menu==12)?'<li class="active">':'<li class="">' ?>
+                         <a href="<?php echo BASE_URL() ?>Report/">
+                            <i class="fa fa-file"></i> <span>Summary Reports</span>
+                         </a>
+                         </li>
+                         <!-- REPORTS -->
+                    </ul>
+                    
+                </div><!-- leftpanel -->

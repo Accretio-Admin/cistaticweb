@@ -1,0 +1,196 @@
+<div class="mainpanel">
+    <div class="pageheader">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-home"></i>
+            </div>
+            <div class="media-body">
+                <ul class="breadcrumb">
+                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                    <li>ECASH</li>
+                </ul>
+                <h4>MONEYGRAM</h4>
+            </div>
+        </div><!-- media -->
+    </div><!-- pageheader -->
+
+    <div class="contentpanel" style="padding-bottom: 0px;">
+        <?php if ($API['S'] === 0): ?>
+        <div class="alert alert-danger"><b><?php echo $API['M'] ?></b></div>
+        <?php endif ?>
+        <?php if ($API['S']== 1): ?>
+        <div class="alert alert-success"><b><?php echo $API['M'] ?></b></div>
+        <?php endif ?>
+        <div class="row row-stat">
+        <?php if ($API['S'] == "" && $result['S'] == ""): ?>
+            <div class="col-md-5">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="padding-top: 15px; padding-bottom: 0px;">
+                  <h5 style="font-weight: bold; color: #4169E1;">MONEYGRAM</h5>
+                  </div>
+                  <div class="panel-body">
+                    <form name="frmmoneygram" action="<?php echo BASE_URL() ?>ecash_payout/moneygram" method="post" class="frmclass">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="inputReferenceNo" maxlength="8" placeholder="REFERENCE NO." required/>
+                        </div>
+                        <div class="form-group text-right">
+                          <button type="submit" class="btn btn-primary" name="btnMoneygramCheck">Check Status</button>
+                        </div>
+                    </form>
+                  </div>
+                 </div>
+              </div>   
+            </div>
+        <?php endif ?>
+
+        <?php if ($API['S'] == "1"): ?>
+          <div class="col-md-5">
+              <div class="contentpanel" style="padding-top: 0px;"> 
+                <div class="panel panel-default">
+                  <div class="panel-heading" style="padding-top: 0px; padding-bottom: 0px;">
+                  <h5 style="font-weight: bold; color: #4169E1;">MONEYGRAM</h5>
+                  </div>
+                  <div class="panel-body" style="padding-top: 0px;">
+                    <form name="frmmoneygram" action="<?php echo BASE_URL() ?>ecash_payout/moneygram" method="post" class="frmclass">
+                    <hr />
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">REFERENCE NUMBER:</span>
+                          <input type="text" class="form-control" name="inputReferenceNo" value="<?php echo $API['RF']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 92px;">REMARKS:</span>
+                          <input type="text" class="form-control" name="inputRemarks" value="<?php echo $API['M']; ?>"  readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 82px;">CURRENCY:</span>
+                          <input type="text" class="form-control" name="inputCurrency" value="<?php echo $API['CY']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 100px;">AMOUNT:</span>
+                          <input type="text" class="form-control" name="inputAmount" value="<?php echo $API['A']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 102px;">CHARGE:</span>
+                          <input type="text" class="form-control" name="inputCharge" value="<?php echo $API['C']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 39px;">PAYOUT AMOUNT:</span>
+                          <input type="text" class="form-control" name="inputPA" value="<?php echo $API['PA']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 60px;">SENDER NAME:</span>
+                          <input type="text" class="form-control" name="inputSN" value="<?php echo $API['SN']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 25px;">BENEFICIARY NAME:</span>
+                          <input type="text" class="form-control" name="inputBN" value="<?php echo $API['BN']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 40px;">ORIGIN ADDRESS:</span>
+                          <input type="text" class="form-control" name="inputOriginAddress" value="<?php echo $API['AD']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1" style="padding-right: 20px;">TRANSACTION DATE:</span>
+                          <input type="text" class="form-control" name="inputTransactionDate" value="<?php echo $API['TD']; ?>" readonly="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="hidden" class="form-control" name="inputBeneficiaryFName" value="<?php echo $API['BNF']; ?>" />
+                      <input type="hidden" class="form-control" name="inputBeneficiaryMName" value="<?php echo $API['BNM']; ?>" />
+                      <input type="hidden" class="form-control" name="inputBeneficiaryLName" value="<?php echo $API['BNL']; ?>" />
+                    </div>
+                    <hr />
+
+                    <div class="form-group">
+                        <select class="form-control" name="selvalidID" id="selvalidID">
+                           <option value="" disabled selected>--CHOOSE VALID ID--</option>  
+                           <option value="SSS">SSS</option>
+                           <option value="PhilHealth">PhilHealth</option>
+                           <option value="Company">Company</option>
+                           <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="inputIDNo" placeholder="ID NUMBER" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="inputMobileNo" placeholder="MOBILE NO." required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="inputAddress" placeholder="ADDRESS" required/>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" name="inputTpass" placeholder="TRANSACTION PASSWORD" required/>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp;Cancel</a>
+                                <button name="btnMoneygramConfirm" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp;Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                  </div>
+                 </div>
+              </div>   
+            </div>
+            <?php endif ?>
+
+	        <?php if ($result['S'] == "2"): ?>
+	            <div class="col-md-5">
+	              <div class="contentpanel" style="padding-top: 0px;"> 
+	                <div class="panel panel-default">
+	                  <div class="panel-heading" style="padding-top: 15px; padding-bottom: 0px;">
+	                  <h5 style="font-weight: bold; color: #4169E1;">MONEYGRAM - CONFIRMATION</h5>
+	                  </div>
+	                  <div class="panel-body">
+	                    <form name="frmmoneygram" action="<?php echo BASE_URL() ?>ecash_payout/moneygram" method="post" class="frmclass">
+	                        <div class="form-group">
+	                          <input type="text" class="form-control" name="inputReferenceNo" value="<?php echo $row['inputReferenceNo']; ?>"  readonly="" />
+	                        </div>
+	                        <div class="form-group text-right">
+	                          <button type="submit" class="btn btn-warning" name="btnMoneygramGenerateTN">Generate Transaction No.</button>
+	                        </div>
+	                        <div class="form-group">
+	                          <input type="hidden" class="form-control" name="inputTpass" value="<?php echo $row['inputTpass']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="selvalidID" value="<?php echo $row['selvalidID']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="inputIDNo" value="<?php echo $row['inputIDNo']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="inputMobileNo" value="<?php echo $row['inputMobileNo']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="inputAddress" value="<?php echo $row['inputAddress']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="inputBeneficiaryFName" value="<?php echo $row['inputBeneficiaryFName']; ?>"  readonly="" />
+	                          <input type="hidden" class="form-control" name="inputBeneficiaryMName" value="<?php echo $row['inputBeneficiaryMName']; ?>"  readonly="" />
+							  <input type="hidden" class="form-control" name="inputBeneficiaryLName" value="<?php echo $row['inputBeneficiaryLName']; ?>"  readonly="" />
+							  <input type="hidden" class="form-control" name="inputAmount" value="<?php echo $row['inputAmount']; ?>"  readonly="" />
+							  <input type="hidden" class="form-control" name="inputCharge" value="<?php echo $row['inputCharge']; ?>"  readonly="" />
+							  <input type="hidden" class="form-control" name="inputCurrency" value="<?php echo $row['inputCurrency']; ?>"  readonly="" />
+	                        </div>
+	                    </form>
+	                  </div>
+	                 </div>
+	              </div>   
+	            </div>
+	        <?php endif ?>
+        </div>
+    </div>
+</div>

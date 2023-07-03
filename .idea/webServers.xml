@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1d8487b6-6496-45a2-b743-046f3a0af76f" name="LIVE RESOURCE" url="http://52.74.212.148">
+        <fileTransfer host="52.74.212.148" port="22" privateKey="C:\Users\Arnan\.ssh\id_dsa\mobile_apps" rootFolder="/var/www/html" accessType="SFTP" passphrase="dfc0dfc5dfc7dfcbdfd8dff5dfc0dfc5dfc7dfcbdfd8df8bdf8bdf8b" username="root" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

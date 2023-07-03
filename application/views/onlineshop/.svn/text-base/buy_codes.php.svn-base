@@ -1,0 +1,120 @@
+		<div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>ONLINE SHOP</li>
+                                </ul>
+                                <h4>BUY CODES</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    
+
+                    
+                    <div class="contentpanel">
+
+                        <div class="row row-stat">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="tab-content nopadding noborder">
+                                    <div class="tab-pane active" id="activities">
+                                        <div class="follower-list">  
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                  <div class="col-xs-8 col-md-12">
+                                                  <b>Please choose a package:</b>
+                                                  <hr />
+                                                      <!--THUMBNAIL--> 
+                                                      <div class="row">
+                                                        <div class="col-sm-6 col-md-4">
+                                                        <a href="#" id="buycodelink" data-desc="Global Dealer Package" >
+                                                          <div class="thumbnail">
+                                                            <img class="logo-package" src="<?php echo BASE_URL()?>assets/images/global_package.png" alt="UPS">
+                                                            <div class="caption">
+                                                              <h5 class="text-center" style="color:#FF9900"><b>Global Dealer Package</b></h5>
+                                                              <p> - Webtool account (for Internet loading and inventory system) <br />
+                                                                  - Local and International Remittance <br />
+                                                                  - Bills Payment Facility <br />
+                                                                  - Domestic and International Online Ticketing <br />
+                                                                  - Online Shopping (Included but to follow) <br />
+                                                                  - Hotel And Resorts Booking (Included but to follow) <br />
+                                                                  - Tarpaulin <br />
+                                                                  - Brochures</p>
+                                                            </div>
+                                                          </div>
+                                                         </a>
+                                                        </div>
+                                                      </div>
+                                                      <!--THUMBNAIL-->
+                                                   </div> 
+                                                </div>  
+                                             </div>      
+                                        </div><!-- activity-list -->
+
+                                    </div><!-- tab-pane -->
+
+                                </div>
+                            </div><!-- col-md-8 -->
+                        </div><!-- row -->
+
+                    </div><!-- contentpanel -->
+                   
+
+                    <!-- Modal -->
+                      <div class="modal fade" id="buycodemodal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                          <form action ="<?php echo BASE_URL()?>Online_shop/buy_codes" method="post">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"r</h4>
+                            </div>
+                            <div class="modal-body">
+                             			<div class="form-group">
+											<input type="text" class="form-control" name ="inputCountry" value="Philippines" readonly />
+                             			</div>
+                             			<div class="form-group">
+                             				<input type="email;" class="form-control" name ="inputEmail" placeholder="Your Email Address"  />	
+                             			</div>
+                             			<div class="form-group">
+                             				<input type="text" class="form-control" name ="inputClient" placeholder="Client's Name" />
+                             			</div>
+                             			<div class="form-group">
+                             				<input type="email" class="form-control" name ="inputClientemail" placeholder="Client's Email Address" />
+                             			</div>
+                             			<div class="form-group">
+                             				<input type="text" class="form-control" name ="inputContact" placeholder="Contact No" />
+                             			</div>
+                             			<div class="form-group">
+                             				<select class="form-control" name="selPayment">
+                             					<option value="" disabled selected>PAYMENT TYPE</option>
+                             					<option value="ECASH">ECASH</option>
+                             				</select>
+                             			</div>
+                             	
+                            </div>
+                            <div class="modal-footer">
+                            	<div class="row">
+                            		<div class="col-xs-6 col-md-6 text-left">
+                            			<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            		</div>
+                            		<div class="col-xs-6 col-md-6">
+                            			<button type="submit" class="btn btn-primary" name="btnsubmit" >SUBMIT</button>
+                            		</div>
+                            	</div>
+                              
+                            </div>
+                           </form>
+                          </div><!--CONTENT -->
+                          
+                        </div>
+                      </div>
+                   
+                    
+    </div><!-- mainpanel -->            

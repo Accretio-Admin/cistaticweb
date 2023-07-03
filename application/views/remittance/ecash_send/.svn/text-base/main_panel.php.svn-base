@@ -1,0 +1,120 @@
+  <div class="mainpanel">
+                    <div class="pageheader">
+                        <div class="media">
+                            <div class="pageicon pull-left">
+                                <i class="fa fa-money"></i>
+                            </div>
+                            <div class="media-body">
+                                <ul class="breadcrumb">
+                                    <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+                                    <li>REMITTANCE</li>
+                                </ul>
+                                <h4>E-CASH SEND</h4>
+                            </div>
+                        </div><!-- media -->
+                    </div><!-- pageheader -->
+                    <div class="contentpanel">
+                        <div class="row row-stat">
+                            <div class="col-sm-9 col-md-9">
+                                <div class="tab-content nopadding noborder">
+                                    <div class="tab-pane active" id="activities">
+                                        <div class="follower-list">  
+                                            <div class="col-sm-12">
+                                                <div class="row media-manager">
+                                                       <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                       <?php if ($user['A_CTRL']['remittance_eclf_send'] == 1): ?>
+                                                        <div class="thmb" >
+                                                          <div class="thmb-prev  text-center">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/loadfund" class="">
+                                                                <img  src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_load_fund_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/loadfund">Convert to Load Fund</a></h5>
+                                                        </div><!-- thmb -->
+                                                        <?php endif ?>
+                                                     </div>  
+
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                     <?php if ($user['A_CTRL']['remittance_ecsg_send'] == 1): ?>
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/sgdfund">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_sgd_load_fund_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/sgdfund">SGD Load Fund</a></h5>
+                                                        </div><!-- thmb -->
+                                                      <?php endif ?>
+                                                     </div>  
+
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                     <?php if ($user['A_CTRL']['remittance_ecash_send'] == 1): ?>
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/ecashtoecash">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_ecash_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center" nowrap><a href="<?php echo BASE_URL() ?>ecash_send/ecashtoecash">E-Cash to E-Cash</a></h5>
+                                                        </div><!-- thmb -->
+                                                      <?php endif ?>
+                                                     </div>
+
+                                                     <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                     <?php if ($user['A_CTRL']['remittance_smartmoney_send'] == 1): ?>
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/ecashtosmartmoney">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_smartmoney_new.png" class="img-responsive" alt="" style= "margin:0 auto;">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/ecashtosmartmoney">Smartmoney</a></h5>
+                                                        </div><!-- thmb -->
+                                                      <?php endif ?>
+                                                     </div> 
+
+                                                      <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                      <?php if ($user['A_CTRL']['remittance_gprs_send'] == 1): ?>
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/ecashpadala">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_padala_new.png" class="img-responsive" alt="" style= "margin:0 auto">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/ecashpadala">E-cash Padala</a></h5>
+                                                        </div><!-- thmb -->
+                                                      <?php endif ?>
+                                                      </div> 
+
+                                                      <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                      <?php if ($user['A_CTRL']['remittance_creditbank_send'] == 1): ?>
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/ecashcredittobank">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_bank_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/ecashcredittobank">Credit to Bank</a></h5>
+                                                        </div><!-- thmb -->
+                                                      <?php endif ?>
+                                                     </div> 
+
+                                                      <div class="col-xs-6 col-sm-6 col-md-3 document">
+                                                        <div class="thmb">
+                                                          <div class="thmb-prev">
+                                                            <a style="background-color: #fff;" href="<?php echo BASE_URL() ?>ecash_send/ecashtocashcard">
+                                                                <img src="<?php echo BASE_URL() ?>assets/images/ecash_send/ecash_to_cashcard_new.png" class="img-responsive" alt="">
+                                                            </a>
+                                                          </div>
+                                                          <h5 class="fm-title text-center"><a href="<?php echo BASE_URL() ?>ecash_send/ecashtocashcard">E-cash Cashcard</a></h5>
+                                                        </div><!-- thmb -->
+                                                     </div>  
+                                                 </div>
+                                             </div>      
+                                        </div><!-- activity-list -->
+                                    </div><!-- tab-pane -->
+                                </div>
+                            </div><!-- col-md-8 -->
+                        </div><!-- row -->
+                    </div><!-- contentpanel -->
+                </div><!-- mainpanel -->            
