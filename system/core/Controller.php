@@ -72,10 +72,10 @@ class CI_Controller {
 		// so that CI can run as one big super object.
 		foreach (is_loaded() as $var => $class)
 		{
-			$this->$var =& load_class($class);
+			$this->$var = load_class($class);
 		}
-
-		$this->load =& load_class('Loader', 'core');
+			
+		$this->load = load_class('Loader', 'core');
 		$this->load->initialize();
 		log_message('info', 'Controller Class Initialized');
 	}
