@@ -47,9 +47,8 @@
          
 
         <!-- New Registration UI -->
-        <link href="<?php echo BASE_URL()?>assets/css/registration.css" rel="stylesheet" />
         <!-- end New Registration UI -->
-        <link href="<?php echo BASE_URL()?>assets/css/morris.css" rel="stylesheet">
+        <link href="<?php echo BASE_URL()?>assets/css/registration.css" rel="stylesheet" />
         <!-- <link href="<?php echo BASE_URL()?>assets/css/select2.css" rel="stylesheet" /> -->
         <link href="<?php echo BASE_URL()?>assets/css/styles.css" rel="stylesheet" />
         
