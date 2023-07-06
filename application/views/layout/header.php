@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
       
-        <?php if ($user['CG'] =="UPS"): ?>
+        <?php if ($user['CG'] == "UPS"): ?>
             <?php if(
                     (is_array($user) && isset($user['R']) && substr($user['R'], 0, 3) == 'GRM') ||
                     (is_array($API) && isset($API['R']) && $API['R'] == 'F5880126') ||
@@ -49,7 +49,6 @@
         <!-- New Registration UI -->
         <!-- end New Registration UI -->
         <link href="<?php echo BASE_URL()?>assets/css/registration.css" rel="stylesheet" />
-        <!-- <link href="<?php echo BASE_URL()?>assets/css/select2.css" rel="stylesheet" /> -->
         <link href="<?php echo BASE_URL()?>assets/css/styles.css" rel="stylesheet" />
         
         <link href="<?php echo BASE_URL()?>assets/css/jquery.datetimepicker.css" rel="stylesheet" />
