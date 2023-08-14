@@ -74,10 +74,13 @@
 <script>
     $('#proceed').on('click', function(){
         waitingDialog.show('Please Wait.', {dialogSize: 'sm', progressType: 'primary'});
-        <?php if($referral): ?>
-            window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>')
+        <?php if(isset($referral)): ?>
+            <?php if(isset($position)): ?>
+                window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>&position=<?php echo $position?>');
+            <?php else: ?>
+                window.location.replace('https://secure.unified.ph/RetailerV2?referral=<?php echo $referral?>');
+            <?php endif; ?>
             $(this).attr('disabled', true);
-            waitingDialog.hide();
         <?php else: ?>
             waitingDialog.hide();
             swal({

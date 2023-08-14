@@ -52,9 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 if ($_SERVER['HTTP_HOST'] == "www.upsexpress.com.ph" || $_SERVER['HTTP_HOST'] == 'upsexpress.com.ph') {
 	$route['default_controller'] = 'Ref';
+	$route['Ref/(:any)/(:any)'] = 'Ref/index/$1/$2';
 	$route['Ref/(:any)'] = 'Ref/index/$1';
 }else{
 	$route['default_controller'] = 'Ref';
+	$route['Ref/(:any)/(:any)'] = 'Ref/index/$1/$2';
 	$route['Ref/(:any)'] = 'Ref/index/$1';
 }
 

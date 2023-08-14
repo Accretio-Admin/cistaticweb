@@ -7,10 +7,6 @@ class Errors extends CI_Controller {
    	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('session');
-	    $this->load->model('Curl_model','curl');
-		$this->load->model('Check_transaction', 'check_trans');
-		$this->user = $this->session->userdata('user');
 
 	  	if (array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER))
 		{
@@ -23,9 +19,6 @@ class Errors extends CI_Controller {
 		}
 		
 	    $this->ip = $IP;
-	    $this->load->model('Query_model');
-	  	$this->load->model('Global_function','global_f');
-	  	$this->load->model('Sp_model');
 	}
 
 	public function index($referral=""){

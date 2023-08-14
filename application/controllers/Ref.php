@@ -28,9 +28,12 @@ class Ref extends CI_Controller {
 	  	$this->load->model('Sp_model');
 	}
 
-	public function index($referral=""){
+	public function index($referral="",$position=""){
 
         $data['referral'] = $referral;
+		if (!empty($position)) {
+			$data['position'] = $position;
+		}
         $this->load->view('layout/header');
 		$this->load->view('anonymous/redirect', $data); 
         $this->load->view('layout/footer');
